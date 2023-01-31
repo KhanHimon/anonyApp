@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <h1>
+    <%= title %>
+  </h1>
+  <style>
+    li {
+      background: #7070eb;
+      max-width: 200px;
+      padding: 5px;
+      color: white;
+      border-radius: 25px;
+      padding-left: 21px;
+      margin-top: 10px;
+    }
+  </style>
+  <h3>CHAT APP</h3>
+  <div style="height: 200px; width: 500px; overflow: auto; border: 1px solid;">
+    <ul id="messages"></ul>
+  </div><br>
+
+  <form id="chat-form">
+    <input type="text" id="chat-mes">
+    <button id="send-chat">Gửi</button>
+  </form>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+
+  const name = prompt("Nhập tên : ");
+
+  const chatForm = document.querySelector('#chat-form');
+  const chatMes = document.querySelector('#chat-mes');
+
+  chatForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const message = chatMes.value
+    socket.emit('on-chat', {
+      name,
+      message: message
+    });
+    chatMes.value = ''
+  })
+
+  const messages = document.querySelector('#messages');
+  socket.on('user-chat', (message) => {
+    const chatItem = document.createElement("li");
+    chatItem.textContent = `${message.name}: ${message.message}`;
+    messages.appendChild(chatItem);
+  })
+</script>
+
+</html>
