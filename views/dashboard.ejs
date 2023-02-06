@@ -4,1644 +4,194 @@
 <!-- Mirrored from admin.pixelstrap.com/wingo/theme/dashboard-03.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Feb 2023 13:18:05 GMT -->
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="wingo admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
-  <meta name="keywords"
-    content="admin template, wingo admin template, dashboard template, flat admin template, responsive admin template, web app">
-  <meta name="author" content="pixelstrap">
-  <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon">
-  <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon">
-  <title>wingo - Premium Admin Template</title>
-  <!-- Google font-->
-  <link rel="preconnect" href="https://fonts.gstatic.com/">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&amp;display=swap"
-    rel="stylesheet">
-  <!-- Font Awesome-->
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/font-awesome.css">
-  <!-- ico-font-->
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
-  <!-- Themify icon-->
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/themify.css">
-  <!-- Flag icon-->
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/flag-icon.css">
-  <!-- Feather icon-->
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/feather-icon.css">
-  <!-- Plugins css start-->
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/date-picker.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/prism.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/vector-map.css">
-  <!-- Plugins css Ends-->
-  <!-- Bootstrap css-->
-  <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
-  <!-- App css-->
-  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-  <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
-  <!-- Responsive css-->
-  <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+  <% include layouts/header.ejs %>
 </head>
 
 <body>
-  <!-- Loader starts-->
-  <div class="loader-wrapper">
-    <div class="main-loader">
-      <div class="bar-0"></div>
-      <div class="bar-1"></div>
-      <div class="bar-2"></div>
-      <div class="bar-3"></div>
-      <div class="bar-4"></div>
-    </div>
-    <div class="loading">Loading... </div>
-  </div>
-  <!-- Loader ends-->
-  <!-- page-wrapper Start-->
   <div class="page-wrapper compact-wrapper" id="pageWrapper">
-    <!-- Page Header Start-->
-    <div class="page-main-header">
-      <div class="main-header-right row m-0">
-        <div class="main-header-left">
-          <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo.png"
-                alt=""></a></div>
-        </div>
-        <div class="toggle-sidebar"><i class="status_toggle middle" data-feather="align-center" id="sidebar-toggle"></i>
-        </div>
-        <div class="left-menu-header col">
-          <ul>
-            <li>
-              <form class="form-inline search-form">
-                <div class="search-bg"><i class="fa fa-search"></i></div>
-                <input class="form-control-plaintext" placeholder="Search here.....">
-              </form><span class="d-sm-none mobile-search search-bg"><i class="fa fa-search"></i></span>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-right col pull-right right-menu">
-          <ul class="nav-menus">
-            <li class="onhover-dropdown">
-              <div class="notification-box"><i data-feather="shopping-bag"></i><span
-                  class="badge badge-pill badge-secondary">4</span></div>
-              <div class="notification-dropdown cart onhover-show-div">
-                <div class="m-3">
+    <% include layouts/page_main_header.ejs %>
+      <div class="page-body-wrapper sidebar-icon">
+        <% include layouts/main_nav.ejs %>
+          <div class="page-body porject-dash">
+            <!-- Container-fluid starts-->
+            <div class="container-fluid project-dash">
+              <div class="row size-column">
+                <div class="col-xl-8 des-xl-100 congrats-sec-main box-col-12">
                   <div class="row">
-                    <div class="col">
-                      <p> <b>5 </b>Items in Cart</p>
+                    <div class="col-md-12">
+                      <div class="card">
+                        <div class="card-body p-0">
+                          <div class="congrats-sec">
+                            <div class="card-header-right">
+                              <ul class="setting-option bg-transparent">
+                                <li>
+                                  <div class="setting-badge light-badge"><i class="fa fa-cog"></i></div>
+                                </li>
+                                <li><i class="view-html fa fa-code"></i></li>
+                                <li><i class="icofont icofont-maximize full-card"></i></li>
+                                <li><i class="icofont icofont-minus minimize-card"></i></li>
+                                <li><i class="icofont icofont-refresh reload-card"></i></li>
+                                <li><i class="icofont icofont-error close-card"></i></li>
+                              </ul>
+                            </div>
+                            <div class="congrats-content">
+                              <h3>Congratulations mark jecno </h3>
+                              <p>Lorem ipsum is simply dummy text of the printing and typesetting printing and
+                                typesetting industry.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col text-end">
-                      <p class="m-0">Cart Subtotal</p>
-                      <h5 class="txt-primary f-w-700">5000$</h5>
+                    <div class="col-md-6 box-col-12 box-col-6">
+                      <div class="card today-task-sec">
+                        <div class="card-header justify-content-between">
+                          <h5>Today Task</h5>
+                          <div class="center-content">
+                            <p>5 Task</p><span>Completed</span>
+                          </div>
+                          <div class="card-header-right">
+                            <ul class="setting-option">
+                              <li>
+                                <div class="setting-badge"><i class="fa fa-spin fa-cog font-primary"></i></div>
+                              </li>
+                              <li><i class="view-html fa fa-code font-primary"></i></li>
+                              <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
+                              <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
+                              <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
+                              <li><i class="icofont icofont-error close-card font-primary"></i></li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="card-body p-t-0">
+                          <div class="table-responsive task-details">
+                            <table class="table table-bordernone">
+                              <tbody>
+                                <tr>
+                                  <td><span>Google Project Apply Review</span>
+                                    <p>Completed in 3 Hours</p>
+                                  </td>
+                                  <td class="progress-showcase">
+                                    <div class="progress sm-progress-bar">
+                                      <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p>75% Percentage</p>
+                                  </td>
+                                  <td> <a class="btn light-primary" href="javascript:void(0)">Edit</a></td>
+                                </tr>
+                                <tr>
+                                  <td><span>Business Logo Create</span>
+                                    <p>Completed in 5 Hours</p>
+                                  </td>
+                                  <td class="progress-showcase">
+                                    <div class="progress sm-progress-bar">
+                                      <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p>Completed</p>
+                                  </td>
+                                  <td><a class="btn light-secondary" href="javascript:void(0)">Edit</a></td>
+                                </tr>
+                                <tr>
+                                  <td><span>Business Project Research</span>
+                                    <p>Completed in 2 Hours</p>
+                                  </td>
+                                  <td class="progress-showcase">
+                                    <div class="progress sm-progress-bar">
+                                      <div class="progress-bar bg-success" role="progressbar" style="width: 65%"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p>65% Percentage</p>
+                                  </td>
+                                  <td><a class="btn light-success" href="javascript:void(0)">Edit</a></td>
+                                </tr>
+                                <tr>
+                                  <td><span>Recruitment in IT Department</span>
+                                    <p>Completed in 4 Days</p>
+                                  </td>
+                                  <td class="progress-showcase">
+                                    <div class="progress sm-progress-bar">
+                                      <div class="progress-bar bg-warning" role="progressbar" style="width: 90%"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <p>90% Percentage</p>
+                                  </td>
+                                  <td><a class="btn light-warning" href="javascript:void(0)">Edit</a></td>
+                                </tr>
+                                <tr>
+                                  <td><span>Submit Riverfront Project</span>
+                                    <p>Completed in 2 Days</p>
+                                  </td>
+                                  <td>
+                                    <div class="progress-showcase">
+                                      <div class="progress sm-progress-bar">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 30%"
+                                          aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                      </div>
+                                      <p>30% Percentage</p>
+                                    </div>
+                                  </td>
+                                  <td><a class="btn light-info" href="javascript:void(0)">Edit</a></td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                          <div class="text-center"><a class="f-w-700" href="javascript:void(0)">More...</a></div>
+                        </div>
+                      </div>
                     </div>
-                  </div><a class="btn btn-dark w-100 mt-1" href="checkout.html">Process To Checkout</a>
+                  </div>
                 </div>
-                <ul class="border-top custom-scrollbar">
-                  <li>
-                    <div class="media"><img src="../assets/images/product/small/tshirt.png" alt="">
-                      <div class="media-body"><a href="product.html">Woman T-shirt - yellow</a>
-                        <h6 class="price">200$</h6>
-                        <div class="row">
-                          <div class="col-9">
-                            <h6 class="qty">Qty
-                              <input class="form-control" type="number" placeholder="1">
-                            </h6>
-                          </div>
-                          <div class="col-3 text-end d-flex"><i class="me-1" data-feather="edit"></i><i
-                              data-feather="trash-2"></i></div>
+                <div class="col-xl-4 des-xl-100 congrats-sec-main box-col-12">
+                  <div class="row">
+                    <div class="col-md-12 box-col-12 box-col-12">
+                      <div class="card today-task-sec">
+                        <div class="card-body p-t-0" style="height: 600px;">
+                          <ul id="messages"></ul>
+                        </div>
+                        <div class="">
+                          <form id="chat-form">
+                            <input type="text" id="chat-mes">
+                            <button id="send-chat">Gửi</button>
+                          </form>
                         </div>
                       </div>
                     </div>
-                  </li>
-                  <li>
-                    <div class="media"><img src="../assets/images/product/small/bag.png" alt="">
-                      <div class="media-body"><a href="product.html">Woman bag - purple</a>
-                        <h6 class="price">100$</h6>
-                        <div class="row">
-                          <div class="col-9">
-                            <h6 class="qty">Qty
-                              <input class="form-control" type="number" placeholder="1">
-                            </h6>
-                          </div>
-                          <div class="col-3 text-end d-flex"><i class="me-1" data-feather="edit"></i><i
-                              data-feather="trash-2"></i></div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media"><img src="../assets/images/product/small/headphone.png" alt="">
-                      <div class="media-body"><a href="product.html">Unisex headphone - Red</a>
-                        <h6 class="price">2000$</h6>
-                        <div class="row">
-                          <div class="col-9">
-                            <h6 class="qty">Qty
-                              <input class="form-control" type="number" placeholder="1">
-                            </h6>
-                          </div>
-                          <div class="col-3 text-end d-flex"><i class="me-1" data-feather="edit"></i><i
-                              data-feather="trash-2"></i></div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media"><img src="../assets/images/product/small/chair.png" alt="">
-                      <div class="media-body"><a href="product.html">Ergonomic Chair</a>
-                        <h6 class="price">920$</h6>
-                        <div class="row">
-                          <div class="col-9">
-                            <h6 class="qty">Qty
-                              <input class="form-control" type="number" placeholder="1">
-                            </h6>
-                          </div>
-                          <div class="col-3 text-end d-flex"><i class="me-1" data-feather="edit"></i><i
-                              data-feather="trash-2"></i></div>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-                <div class="m-3 mt-1"><a class="btn btn-light w-100 mt-3" href="cart.html">View cart</a></div>
-              </div>
-            </li>
-            <li class="onhover-dropdown">
-              <div class="notification-box"><i data-feather="bell"></i><span
-                  class="badge badge-pill badge-primary">4</span></div>
-              <div class="notification-dropdown onhover-show-div">
-                <div class="m-3"><a class="btn btn-dark w-100" href="email_inbox.html">You have 4 notifications</a>
+                  </div>
                 </div>
-                <ul class="border-top">
-                  <li>
-                    <p class="mb-0 ps-4 p-relative"><a href="to-do.html"><i class="fa fa-circle me-3 font-primary">
-                        </i>Delivery processing <span class="pull-right">10 min.</span></a></p>
-                  </li>
-                  <li>
-                    <p class="mb-0 ps-4 p-relative"><a href="to-do.html"><i
-                          class="fa fa-circle me-3 font-success"></i>Order Complete<span class="pull-right">1
-                          hr</span></a></p>
-                  </li>
-                  <li>
-                    <p class="mb-0 ps-4 p-relative"><a href="to-do.html"><i
-                          class="fa fa-circle me-3 font-info"></i>Tickets Generated<span class="pull-right">3
-                          hr</span></a></p>
-                  </li>
-                  <li>
-                    <p class="mb-0 ps-4 p-relative"><a href="to-do.html"><i
-                          class="fa fa-circle me-3 font-warning"></i>Delivery Complete<span class="pull-right">6 hr
-                        </span></a></p>
-                  </li>
-                </ul>
-                <div class="m-3 mt-1"><a class="btn btn-light w-100" href="email_inbox.html">View all</a></div>
               </div>
-            </li>
-            <li class="onhover-dropdown"><i data-feather="message-square"></i>
-              <div class="chat-dropdown onhover-show-div">
-                <div class="m-3"><a class="btn btn-dark w-100" href="chat.html">You have 3 message</a></div>
-                <ul class="border-top custom-scrollbar">
-                  <li>
-                    <div class="media"><img class="img-fluid rounded-circle me-3"
-                        src="../assets/images/avtar/emoji/7.png" alt="">
-                      <div class="status-circle online"></div>
-                      <div class="media-body"><a href="chat.html"><span>Erica Hughes</span></a>
-                        <p class="f-12 light-font">okay, trying now.</p>
-                      </div>
-                      <p class="badge badge-primary">32 min</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media"><img class="img-fluid rounded-circle me-3"
-                        src="../assets/images/avtar/emoji/8.png" alt="">
-                      <div class="status-circle away"></div>
-                      <div class="media-body"><a href="chat.html"><span>Kori Thomas</span></a>
-                        <p class="f-12 light-font">i could help in some of bug?</p>
-                      </div>
-                      <p class="badge badge-success">58 min</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media"><img class="img-fluid rounded-circle me-3"
-                        src="../assets/images/avtar/emoji/4.png" alt="">
-                      <div class="status-circle offline"></div>
-                      <div class="media-body"><a href="chat.html"><span>Ain Chavez</span></a>
-                        <p class="f-12 light-font">It's working awesome :)</p>
-                      </div>
-                      <p class="badge badge-danger">1 hr</p>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="media"><img class="img-fluid rounded-circle me-3"
-                        src="../assets/images/avtar/emoji/1.png" alt="">
-                      <div class="status-circle offline"></div>
-                      <div class="media-body"><a href="chat.html"><span>Johan deo</span></a>
-                        <p class="f-12 light-font">Great Thanks you !!</p>
-                      </div>
-                      <p class="badge badge-danger">2 hr</p>
-                    </div>
-                  </li>
-                </ul>
-                <div class="m-3"><a class="btn btn-light w-100" href="chat.html">View all</a></div>
-              </div>
-            </li>
-            <li>
-              <div class="mode"><i class="fa fa-moon-o"></i></div>
-            </li>
-            <li><a class="text-dark" href="#!" onclick="javascript:toggleFullScreen()"><i
-                  data-feather="maximize"></i></a></li>
-            <li class="onhover-dropdown">
-              <div class="media profile-media"><img class="rounded-circle" src="../assets/images/avtar/emoji/9.png"
-                  alt=""></div>
-              <ul class="profile-dropdown onhover-show-div">
-                <li><a href="user-profile.html"><i data-feather="user"></i><span>Account </span></a></li>
-                <li><a href="user-profile.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
-                <li><a href="kanban.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
-                <li><a href="edit-profile.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                <li><a class="btn btn-light w-100" href="login.html"><i data-feather="log-in"></i>Log out</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-        <div class="d-lg-none col mobile-toggle pull-right"><i data-feather="more-horizontal"></i></div>
+            </div>
+            <!-- Container-fluid Ends-->
+          </div>
       </div>
-    </div>
-    <!-- Page Header Ends                              -->
-    <!-- Page Body Start-->
-    <div class="page-body-wrapper sidebar-icon">
-      <!-- Page Sidebar Start-->
-      <header class="main-nav">
-        <div class="logo-wrapper"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo.png"
-              alt=""></a></div>
-        <div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid"
-              src="../assets/images/logo/logo-icon.png" alt=""></a></div>
-        <div class="morden-logo"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/morden-logo.png"
-              alt=""></a></div>
-        <nav>
-          <div class="main-navbar">
-            <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
-            <div id="mainnav">
-              <ul class="nav-menu custom-scrollbar">
-                <li class="back-btn">
-                  <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2"
-                      aria-hidden="true"></i></div>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="home"></i><span>Dashboard</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="index.html">Default</a></li>
-                    <li><a href="dashboard-02.html">Ecommerce</a></li>
-                    <li><a href="dashboard-03.html">Project</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="airplay"></i><span>Widgets</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="general-widget.html">General</a></li>
-                    <li><a href="chart-widget.html">Chart</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="layout"></i><span>Page layout</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="box-layout.html">Boxed</a></li>
-                    <li><a href="layout-rtl.html">RTL </a></li>
-                    <li><a href="layout-dark.html">Dark Layout </a></li>
-                    <li><a href="footer-light.html">Footer Light</a></li>
-                    <li><a href="footer-dark.html">Footer Dark</a></li>
-                    <li><a href="footer-fixed.html">Footer Fixed</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="box"></i><span>Project </span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="projects.html">Project List</a></li>
-                    <li><a href="projectcreate.html">Create new</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="file-manager.html"><i
-                      data-feather="git-pull-request"> </i><span>File manager </span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="kanban.html"><i
-                      data-feather="monitor"> </i><span>kanban Board</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="shopping-bag"></i><span>Ecommerce </span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="product.html">Product</a></li>
-                    <li><a href="product-page.html">Product page</a></li>
-                    <li><a href="list-products.html">Product list</a></li>
-                    <li><a href="payment-details.html">Payment Details</a></li>
-                    <li><a href="order-history.html">Order History</a></li>
-                    <li><a href="invoice-template.html">Invoice</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="list-wish.html">Wishlist</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="mail"></i><span>Email</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="email_inbox.html">Mail Inbox</a></li>
-                    <li><a href="email_read.html">Read mail</a></li>
-                    <li><a href="email_compose.html">Compose</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="message-circle"></i><span>Chat</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="chat.html">Chat App</a></li>
-                    <li><a href="chat-video.html">Video chat</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="users"></i><span>Users</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="user-profile.html">Users Profile</a></li>
-                    <li><a href="edit-profile.html">Users Edit</a></li>
-                    <li><a href="user-cards.html">Users Cards</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="bookmark.html"><i
-                      data-feather="heart"> </i><span>Bookmarks</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="contacts.html"><i
-                      data-feather="list"> </i><span>Contacts</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="task.html"><i
-                      data-feather="check-square"> </i><span>Tasks</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="calendar-basic.html"><i
-                      data-feather="calendar"> </i><span>Calender</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="social-app.html"><i
-                      data-feather="zap"> </i><span>Social App</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="to-do.html"><i data-feather="clock">
-                    </i><span>To-Do</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="search.html"><i
-                      data-feather="search"> </i><span>Search Result</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="file-text"></i><span>Forms</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a class="submenu-title" href="javascript:void(0)">Form Controls<span class="sub-arrow"><i
-                            class="fa fa-chevron-right"></i></span></a>
-                      <ul class="nav-sub-childmenu submenu-content">
-                        <li><a href="form-validation.html">Form Validation</a></li>
-                        <li><a href="base-input.html">Base Inputs</a></li>
-                        <li><a href="radio-checkbox-control.html">Checkbox & Radio</a></li>
-                        <li><a href="input-group.html">Input Groups</a></li>
-                        <li><a href="megaoptions.html">Mega Options</a></li>
-                      </ul>
-                    </li>
-                    <li><a class="submenu-title" href="javascript:void(0)">Form Widgets<span class="sub-arrow"><i
-                            class="fa fa-chevron-right"></i></span></a>
-                      <ul class="nav-sub-childmenu submenu-content">
-                        <li><a href="datepicker.html">Datepicker</a></li>
-                        <li><a href="time-picker.html">Timepicker</a></li>
-                        <li><a href="datetimepicker.html">Datetimepicker</a></li>
-                        <li><a href="daterangepicker.html">Daterangepicker</a></li>
-                        <li><a href="touchspin.html">Touchspin</a></li>
-                        <li><a href="select2.html">Select2</a></li>
-                        <li><a href="switch.html">Switch</a></li>
-                        <li><a href="typeahead.html">Typeahead</a></li>
-                        <li><a href="clipboard.html">Clipboard</a></li>
-                      </ul>
-                    </li>
-                    <li><a class="submenu-title" href="javascript:void(0)">Form layout<span class="sub-arrow"><i
-                            class="fa fa-chevron-right"></i></span></a>
-                      <ul class="nav-sub-childmenu submenu-content">
-                        <li><a href="default-form.html">Default Forms</a></li>
-                        <li><a href="form-wizard.html">Form Wizard 1</a></li>
-                        <li><a href="form-wizard-two.html">Form Wizard 2</a></li>
-                        <li><a href="form-wizard-three.html">Form Wizard 3 </a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="server"></i><span>Tables</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a class="submenu-title" href="javascript:void(0)">Bootstrap Tables<span class="sub-arrow"><i
-                            class="fa fa-chevron-right"></i></span></a>
-                      <ul class="nav-sub-childmenu submenu-content">
-                        <li><a href="bootstrap-basic-table.html">Basic Tables</a></li>
-                        <li><a href="bootstrap-sizing-table.html">Sizing Tables</a></li>
-                        <li><a href="bootstrap-border-table.html">Border Tables</a></li>
-                        <li><a href="bootstrap-styling-table.html">Styling Tables</a></li>
-                        <li><a href="table-components.html">Table components</a></li>
-                      </ul>
-                    </li>
-                    <li><a class="submenu-title" href="javascript:void(0)">Data Tables<span class="sub-arrow"><i
-                            class="fa fa-chevron-right"></i></span></a>
-                      <ul class="nav-sub-childmenu submenu-content">
-                        <li><a href="datatable-basic-init.html">Basic Init</a></li>
-                        <li><a href="datatable-advance.html">Advance Init</a></li>
-                        <li><a href="datatable-styling.html">Styling</a></li>
-                        <li><a href="datatable-AJAX.html">AJAX</a></li>
-                        <li><a href="datatable-server-side.html">Server Side</a></li>
-                        <li><a href="datatable-plugin.html">Plug-in</a></li>
-                        <li><a href="datatable-API.html">API</a></li>
-                        <li><a href="datatable-data-source.html">Data Sources</a></li>
-                      </ul>
-                    </li>
-                    <li><a class="submenu-title" href="javascript:void(0)">Ex. Data Tables<span class="sub-arrow"><i
-                            class="fa fa-chevron-right"></i></span></a>
-                      <ul class="nav-sub-childmenu submenu-content">
-                        <li><a href="datatable-ext-autofill.html">Auto Fill</a></li>
-                        <li><a href="datatable-ext-basic-button.html">Basic Button</a></li>
-                        <li><a href="datatable-ext-col-reorder.html">Column Reorder</a></li>
-                        <li><a href="datatable-ext-fixed-header.html">Fixed Header</a></li>
-                        <li><a href="datatable-ext-html-5-data-export.html">HTML 5 Export</a></li>
-                        <li><a href="datatable-ext-key-table.html">Key Table</a></li>
-                        <li><a href="datatable-ext-responsive.html">Responsive</a></li>
-                        <li><a href="datatable-ext-row-reorder.html">Row Reorder</a></li>
-                        <li><a href="datatable-ext-scroller.html">Scroller</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="jsgrid-table.html">Js Grid Table</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="box"></i><span>Ui Kits</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="state-color.html">State color</a></li>
-                    <li><a href="typography.html">Typography</a></li>
-                    <li><a href="avatars.html">Avatars</a></li>
-                    <li><a href="helper-classes.html">helper classes</a></li>
-                    <li><a href="grid.html">Grid</a></li>
-                    <li><a href="tag-pills.html">Tag & pills</a></li>
-                    <li><a href="progress-bar.html">Progress</a></li>
-                    <li><a href="modal.html">Modal</a></li>
-                    <li><a href="alert.html">Alert</a></li>
-                    <li><a href="popover.html">Popover</a></li>
-                    <li><a href="tooltip.html">Tooltip</a></li>
-                    <li><a href="loader.html">Spinners</a></li>
-                    <li><a href="dropdown.html">Dropdown</a></li>
-                    <li><a href="according.html">Accordion</a></li>
-                    <li><a class="submenu-title" href="javascript:void(0)">Tabs<span class="sub-arrow"><i
-                            class="fa fa-chevron-right"></i></span></a>
-                      <ul class="nav-sub-childmenu submenu-content">
-                        <li><a href="tab-bootstrap.html">Bootstrap Tabs</a></li>
-                        <li><a href="tab-material.html">Line Tabs</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="box-shadow.html">Shadow</a></li>
-                    <li><a href="list.html">Lists</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="folder-plus"></i><span>Bonus Ui</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="scrollable.html">Scrollable</a></li>
-                    <li><a href="tree.html">Tree view</a></li>
-                    <li><a href="bootstrap-notify.html">Bootstrap Notify</a></li>
-                    <li><a href="rating.html">Rating</a></li>
-                    <li><a href="dropzone.html">dropzone</a></li>
-                    <li><a href="tour.html">Tour</a></li>
-                    <li><a href="sweet-alert2.html">SweetAlert2</a></li>
-                    <li><a href="modal-animated.html">Animated Modal</a></li>
-                    <li><a href="owl-carousel.html">Owl Carousel</a></li>
-                    <li><a href="ribbons.html">Ribbons</a></li>
-                    <li><a href="pagination.html">Pagination</a></li>
-                    <li><a href="steps.html">Steps</a></li>
-                    <li><a href="breadcrumb.html">Breadcrumb</a></li>
-                    <li><a href="range-slider.html">Range Slider</a></li>
-                    <li><a href="image-cropper.html">Image cropper</a></li>
-                    <li><a href="sticky.html">Sticky</a></li>
-                    <li><a href="basic-card.html">Basic Card</a></li>
-                    <li><a href="creative-card.html">Creative Card</a></li>
-                    <li><a href="tabbed-card.html">Tabbed Card</a></li>
-                    <li><a href="dragable-card.html">Draggable Card</a></li>
-                    <li><a class="submenu-title" href="javascript:void(0)">Timeline<span class="sub-arrow"><i
-                            class="fa fa-chevron-right"></i></span></a>
-                      <ul class="nav-sub-childmenu submenu-content">
-                        <li><a href="timeline-v-1.html">Timeline 1</a></li>
-                        <li><a href="timeline-v-2.html">Timeline 2 </a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="edit-3"></i><span>Builders</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="form-builder-1.html"> Form Builder 1</a></li>
-                    <li><a href="form-builder-2.html"> Form Builder 2</a></li>
-                    <li><a href="pagebuild.html">Page Builder</a></li>
-                    <li><a href="button-builder.html">Button Builder</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="cloud-drizzle"></i><span>Animation</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="animate.html">Animate</a></li>
-                    <li><a href="scroll-reval.html">Scroll Reveal</a></li>
-                    <li><a href="AOS.html">AOS animation</a></li>
-                    <li><a href="tilt.html">Tilt Animation</a></li>
-                    <li><a href="wow.html">Wow Animation</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="command"></i><span>Icons</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="flag-icon.html">Flag icon</a></li>
-                    <li><a href="font-awesome.html">Fontawesome Icon</a></li>
-                    <li><a href="ico-icon.html">Ico Icon</a></li>
-                    <li><a href="themify-icon.html">Thimify Icon</a></li>
-                    <li><a href="feather-icon.html">Feather icon</a></li>
-                    <li><a href="whether-icon.html">Whether Icon </a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="cloud"></i><span>Buttons</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="buttons.html">Default Style</a></li>
-                    <li><a href="buttons-flat.html">Flat Style</a></li>
-                    <li><a href="buttons-edge.html">Edge Style</a></li>
-                    <li><a href="raised-button.html">Raised Style</a></li>
-                    <li><a href="button-group.html">Button Group</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="bar-chart"></i><span>Charts</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="chart-apex.html">Apex Chart</a></li>
-                    <li><a href="chart-google.html">Google Chart</a></li>
-                    <li><a href="chart-sparkline.html">Sparkline chart</a></li>
-                    <li><a href="chart-flot.html">Flot Chart</a></li>
-                    <li><a href="chart-knob.html">Knob Chart</a></li>
-                    <li><a href="chart-morris.html">Morris Chart</a></li>
-                    <li><a href="chartjs.html">Chatjs Chart</a></li>
-                    <li><a href="chartist.html">Chartist Chart</a></li>
-                    <li><a href="chart-peity.html">Peity Chart </a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="landing-page.html" target="_blank"><i
-                      data-feather="cast"> </i><span>Landing page</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="sample-page.html" target="_blank"><i
-                      data-feather="file-text"> </i><span>Sample page</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="internationalization.html"
-                    target="_blank"><i data-feather="globe"> </i><span>Internationalization</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav"
-                    href="http://admin.pixelstrap.com/wingo/starter-kit/index.html" target="_blank"><i
-                      data-feather="anchor"></i><span>Starter kit </span></a></li>
-                <li class="mega-menu"><a class="nav-link menu-title" href="#"><i
-                      data-feather="layers"></i><span>Others</span></a>
-                  <div class="mega-menu-container menu-content">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col mega-box">
-                          <div class="link-section">
-                            <div class="submenu-title">
-                              <h5>Error Page</h5>
-                            </div>
-                            <ul class="submenu-content opensubmegamenu">
-                              <li><a href="error-page1.html">Error Page 1</a></li>
-                              <li><a href="error-page2.html">Error Page 2</a></li>
-                              <li><a href="error-page3.html">Error Page 3</a></li>
-                              <li><a href="error-page4.html">Error Page 4 </a></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="col mega-box">
-                          <div class="link-section">
-                            <div class="submenu-title">
-                              <h5> Authentication</h5>
-                            </div>
-                            <ul class="submenu-content opensubmegamenu">
-                              <li><a href="login.html" target="_blank">Login Simple</a></li>
-                              <li><a href="login-one.html" target="_blank">Login with bg image</a></li>
-                              <li><a href="login-two.html" target="_blank">Login with image two </a></li>
-                              <li><a href="login-bs-validation.html" target="_blank">Login With validation</a></li>
-                              <li><a href="login-bs-tt-validation.html" target="_blank">Login with tooltip</a></li>
-                              <li><a href="login-sa-validation.html" target="_blank">Login with sweetalert</a></li>
-                              <li><a href="sign-up.html" target="_blank">Register Simple</a></li>
-                              <li><a href="sign-up-one.html" target="_blank">Register with Bg Image</a></li>
-                              <li><a href="sign-up-two.html" target="_blank">Register with Bg video </a></li>
-                              <li><a href="unlock.html">Unlock User</a></li>
-                              <li><a href="forget-password.html">Forget Password</a></li>
-                              <li><a href="creat-password.html">Creat Password</a></li>
-                              <li><a href="maintenance.html">Maintenance</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="col mega-box">
-                          <div class="link-section">
-                            <div class="submenu-title">
-                              <h5>Coming Soon</h5>
-                            </div>
-                            <ul class="submenu-content opensubmegamenu">
-                              <li><a href="comingsoon.html">Coming Simple</a></li>
-                              <li><a href="comingsoon-bg-video.html">Coming with Bg video</a></li>
-                              <li><a href="comingsoon-bg-img.html">Coming with Bg Image</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="col mega-box">
-                          <div class="link-section">
-                            <div class="submenu-title">
-                              <h5>Email templates</h5>
-                            </div>
-                            <ul class="submenu-content opensubmegamenu">
-                              <li><a href="basic-template.html">Basic Email</a></li>
-                              <li><a href="email-header.html">Basic With Header</a></li>
-                              <li><a href="template-email.html">Ecomerce Template</a></li>
-                              <li><a href="template-email-2.html">Email Template 2</a></li>
-                              <li><a href="ecommerce-templates.html">Ecommerce Email</a></li>
-                              <li><a href="email-order-success.html">Order Success</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="image"></i><span>Gallery</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="gallery.html">Gallery Grid</a></li>
-                    <li><a href="gallery-with-description.html">Gallery Grid Desc</a></li>
-                    <li><a href="gallery-masonry.html">Masonry Gallery</a></li>
-                    <li><a href="masonry-gallery-with-disc.html">Masonry with Desc</a></li>
-                    <li><a href="gallery-hover.html">Hover Effects</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="film"></i><span>Blog</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="blog.html">Blog Details</a></li>
-                    <li><a href="blog-single.html">Blog Single</a></li>
-                    <li><a href="add-post.html">Add Post</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="faq.html"><i
-                      data-feather="help-circle"></i><span>FAQ</span></a></li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="package"></i><span>Job Search</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="job-cards-view.html">Cards view</a></li>
-                    <li><a href="job-list-view.html">List View</a></li>
-                    <li><a href="job-details.html">Job Details</a></li>
-                    <li><a href="job-apply.html">Apply</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="radio"></i><span>Learning</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="learning-list-view.html">Learning List</a></li>
-                    <li><a href="learning-detailed.html">Detailed Course</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="map"></i><span>Maps</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="map-js.html">Maps JS</a></li>
-                    <li><a href="vector-map.html">Vector Maps</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="edit"></i><span>Editors</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="summernote.html">Summer Note</a></li>
-                    <li><a href="ckeditor.html">CK editor</a></li>
-                    <li><a href="simple-MDE.html">MDE editor</a></li>
-                    <li><a href="ace-code-editor.html">ACE code editor</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title" href="javascript:void(0)"><i
-                      data-feather="sunrise"></i><span>Knowledgebase</span></a>
-                  <ul class="nav-submenu menu-content">
-                    <li><a href="knowledgebase.html">Knowledgebase</a></li>
-                    <li><a href="knowledge-category.html">Knowledge category</a></li>
-                    <li><a href="knowledge-detail.html">Knowledge detail</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown"><a class="nav-link menu-title link-nav" href="support-ticket.html"><i
-                      data-feather="users"></i><span>Support Ticket </span></a></li>
-              </ul>
-            </div>
-            <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
-          </div>
-        </nav>
-      </header>
-      <!-- Page Sidebar Ends-->
-      <div class="page-body porject-dash">
-        <div class="container-fluid">
-          <div class="page-header dash-breadcrumb">
-            <div class="row">
-              <div class="col-6">
-                <h3 class="f-w-600">default</h3>
-              </div>
-              <div class="col-6">
-                <div class="breadcrumb-sec">
-                  <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a></li>
-                    <li class="breadcrumb-item">Dashboard</li>
-                    <li class="breadcrumb-item active">Project</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Container-fluid starts-->
-        <div class="container-fluid project-dash">
-          <div class="row size-column">
-            <div class="col-xl-8 des-xl-100 congrats-sec-main box-col-12">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="card">
-                    <div class="card-body p-0">
-                      <div class="congrats-sec">
-                        <div class="card-header-right">
-                          <ul class="setting-option bg-transparent">
-                            <li>
-                              <div class="setting-badge light-badge"><i class="fa fa-cog"></i></div>
-                            </li>
-                            <li><i class="view-html fa fa-code"></i></li>
-                            <li><i class="icofont icofont-maximize full-card"></i></li>
-                            <li><i class="icofont icofont-minus minimize-card"></i></li>
-                            <li><i class="icofont icofont-refresh reload-card"></i></li>
-                            <li><i class="icofont icofont-error close-card"></i></li>
-                          </ul>
-                        </div>
-                        <div class="congrats-content">
-                          <h3>Congratulations mark jecno </h3>
-                          <p>Lorem ipsum is simply dummy text of the printing and typesetting printing and typesetting
-                            industry.</p><a class="btn btn-light learn-btn" href="blog-single.html">Learn More<i
-                              class="fa fa-arrow-right font-primary ms-2"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 box-col-12 box-col-6">
-                  <div class="card today-task-sec">
-                    <div class="card-header justify-content-between">
-                      <h5>Today Task</h5>
-                      <div class="center-content">
-                        <p>5 Task</p><span>Completed</span>
-                      </div>
-                      <div class="card-header-right">
-                        <ul class="setting-option">
-                          <li>
-                            <div class="setting-badge"><i class="fa fa-spin fa-cog font-primary"></i></div>
-                          </li>
-                          <li><i class="view-html fa fa-code font-primary"></i></li>
-                          <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                          <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                          <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                          <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="card-body p-t-0">
-                      <div class="table-responsive task-details">
-                        <table class="table table-bordernone">
-                          <tbody>
-                            <tr>
-                              <td><span>Google Project Apply Review</span>
-                                <p>Completed in 3 Hours</p>
-                              </td>
-                              <td class="progress-showcase">
-                                <div class="progress sm-progress-bar">
-                                  <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p>75% Percentage</p>
-                              </td>
-                              <td> <a class="btn light-primary" href="javascript:void(0)">Edit</a></td>
-                            </tr>
-                            <tr>
-                              <td><span>Business Logo Create</span>
-                                <p>Completed in 5 Hours</p>
-                              </td>
-                              <td class="progress-showcase">
-                                <div class="progress sm-progress-bar">
-                                  <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p>Completed</p>
-                              </td>
-                              <td><a class="btn light-secondary" href="javascript:void(0)">Edit</a></td>
-                            </tr>
-                            <tr>
-                              <td><span>Business Project Research</span>
-                                <p>Completed in 2 Hours</p>
-                              </td>
-                              <td class="progress-showcase">
-                                <div class="progress sm-progress-bar">
-                                  <div class="progress-bar bg-success" role="progressbar" style="width: 65%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p>65% Percentage</p>
-                              </td>
-                              <td><a class="btn light-success" href="javascript:void(0)">Edit</a></td>
-                            </tr>
-                            <tr>
-                              <td><span>Recruitment in IT Department</span>
-                                <p>Completed in 4 Days</p>
-                              </td>
-                              <td class="progress-showcase">
-                                <div class="progress sm-progress-bar">
-                                  <div class="progress-bar bg-warning" role="progressbar" style="width: 90%"
-                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                                <p>90% Percentage</p>
-                              </td>
-                              <td><a class="btn light-warning" href="javascript:void(0)">Edit</a></td>
-                            </tr>
-                            <tr>
-                              <td><span>Submit Riverfront Project</span>
-                                <p>Completed in 2 Days</p>
-                              </td>
-                              <td>
-                                <div class="progress-showcase">
-                                  <div class="progress sm-progress-bar">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 30%"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                  <p>30% Percentage</p>
-                                </div>
-                              </td>
-                              <td><a class="btn light-info" href="javascript:void(0)">Edit</a></td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="text-center"><a class="f-w-700" href="javascript:void(0)">More...</a></div>
-                      <div class="code-box-copy">
-                        <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#today-task"
-                          title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                        <pre><code class="language-html" id="today-task">&lt;div class="card today-task-sec"&gt;
- &lt;div class="card-header justify-content-between"&gt;
-   &lt;h5&gt;Today Task&lt;/h5&gt;
- &lt;div class="center-content"&gt;
-   &lt;p&gt;5 Task&lt;/p&gt;
-   &lt;span&gt;Completed&lt;/span&gt;
- &lt;/div&gt;
- &lt;div class="card-header-right"&gt;
-   &lt;ul class="setting-option"&gt;
-     &lt;li&gt;&lt;div class="setting-badge"&gt;&lt;i class="fa fa-spin fa-cog font-primary"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
-     &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-     &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-     &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-     &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-     &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-   &lt;/ul&gt;
- &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="card-body p-t-0"&gt;
- &lt;div class="table-responsive task-details"&gt;
-   &lt;table class="table table-bordernone"&gt;
-     &lt;tbody&gt;
-       &lt;tr&gt;
-         &lt;td&gt;
-           &lt;span&gt;Google Project Apply Review&lt;/span&gt;
-           &lt;p&gt;Completed in 3 Hours&lt;/p&gt;
-         &lt;/td&gt;
-         &lt;td class="progress-showcase"&gt;
-           &lt;div class="progress sm-progress-bar"&gt;
-             &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
-           &lt;/div&gt;
-           &lt;p&gt;75% Percentage&lt;/p&gt;
-         &lt;/td&gt;
-         &lt;td&gt; 
-           &lt;a class="btn light-primary" href="javascript:void(0)"&gt;Edit&lt;/a&gt;
-         &lt;/td&gt;
-       &lt;/tr&gt;
-       &lt;tr&gt;
-         &lt;td&gt;
-           &lt;span&gt;Business Logo Create&lt;/span&gt;
-           &lt;p&gt;Completed in 5 Hours&lt;/p&gt;
-         &lt;/td&gt;
-         &lt;td class="progress-showcase"&gt;
-           &lt;div class="progress sm-progress-bar"&gt;
-             &lt;div class="progress-bar bg-secondary" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
-           &lt;/div&gt;
-           &lt;p&gt;Completed&lt;/p&gt;
-         &lt;/td&gt;
-         &lt;td&gt;
-           &lt;a class="btn light-secondary" href="javascript:void(0)"&gt;Edit&lt;/a&gt;
-         &lt;/td&gt;
-       &lt;/tr&gt;
-       &lt;tr&gt;
-         &lt;td&gt;
-           &lt;span&gt;Business Project Research&lt;/span&gt;
-           &lt;p&gt;Completed in 2 Hours&lt;/p&gt;
-         &lt;/td&gt;
-         &lt;td class="progress-showcase"&gt;
-           &lt;div class="progress sm-progress-bar"&gt;
-             &lt;div class="progress-bar bg-success" role="progressbar" style="width: 65%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
-           &lt;/div&gt;
-           &lt;p&gt;65% Percentage&lt;/p&gt;
-         &lt;/td&gt;
-         &lt;td&gt;
-           &lt;a class="btn light-success" href="javascript:void(0)"&gt;Edit&lt;/a&gt;&lt;/td&gt;
-       &lt;/tr&gt;
-       &lt;tr&gt;
-         &lt;td&gt;
-           &lt;span&gt;Recruitment in IT Department&lt;/span&gt;
-           &lt;p&gt;Completed in 4 Days&lt;/p&gt;
-         &lt;/td&gt;
-         &lt;td class="progress-showcase"&gt;
-           &lt;div class="progress sm-progress-bar"&gt;
-             &lt;div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
-           &lt;/div&gt;
-           &lt;p&gt;90% Percentage&lt;/p&gt;
-         &lt;/td&gt;
-         &lt;td&gt;&lt;a class="btn light-warning" href="javascript:void(0)"&gt;Edit&lt;/a&gt;&lt;/td&gt;
-       &lt;/tr&gt;
-       &lt;tr&gt;
-         &lt;td&gt;
-           &lt;span&gt;Submit Riverfront Project&lt;/span&gt;
-           &lt;p&gt;Completed in 2 Days&lt;/p&gt;
-         &lt;/td&gt;
-         &lt;td&gt;
-           &lt;div class="progress-showcase"&gt;
-             &lt;div class="progress sm-progress-bar"&gt;
-               &lt;div class="progress-bar bg-info" role="progressbar" style="width: 30%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
-             &lt;/div&gt;
-             &lt;p&gt;30% Percentage&lt;/p&gt;
-           &lt;/div&gt;
-         &lt;/td&gt;
-         &lt;td&gt;
-           &lt;a class="btn light-info" href="javascript:void(0)"&gt;Edit&lt;/a&gt;
-         &lt;/td&gt;
-       &lt;/tr&gt;
-       &lt;/tbody&gt;
-     &lt;/table&gt;
-   &lt;/div&gt;
-   &lt;div class="text-center"&gt;
-    &lt;a class="f-w-700" href="javascript:void(0)"&gt;More...&lt;/a&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 box-col-12 box-col-6">
-                  <div class="card project-goal-sec">
-                    <div class="card-header justify-content-between">
-                      <h5>Project Goal</h5>
-                      <div class="center-content">
-                        <p>Archive</p><span>$658429</span>
-                      </div>
-                      <div class="card-header-right">
-                        <ul class="setting-option">
-                          <li>
-                            <div class="setting-badge"><i class="fa fa-spin fa-cog font-primary"></i></div>
-                          </li>
-                          <li><i class="view-html fa fa-code font-primary"></i></li>
-                          <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                          <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                          <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                          <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="card-body p-0">
-                      <div id="radar-chart"></div>
-                      <div class="code-box-copy">
-                        <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#project-goal"
-                          title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                        <pre><code class="language-html" id="project-goal">&lt;div class="card project-goal-sec"&gt;
- &lt;div class="card-header justify-content-between"&gt;
-   &lt;h5&gt;Project Goal&lt;/h5&gt;
-   &lt;div class="center-content"&gt;
-     &lt;p&gt;Archive&lt;/p&gt;
-     &lt;span&gt;$658429&lt;/span&gt;
-   &lt;/div&gt;
-   &lt;div class="card-header-right"&gt;
-     &lt;ul class="setting-option"&gt;
-       &lt;li&gt;
-         &lt;div class="setting-badge"&gt;
-           &lt;i class="fa fa-spin fa-cog font-primary"&gt;&lt;/i&gt;
-         &lt;/div&gt;
-       &lt;/li&gt;
-       &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-     &lt;/ul&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="card-body p-0"&gt;
-   &lt;div id="radar-chart"&gt;&lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 des-xl-100 box-col-12">
-              <div class="row">
-                <div class="col-xl-12 col-md-6 des-xl-50 box-col-6">
-                  <div class="card project-calendar" data-intro="This is Date picker">
-                    <div class="card-header">
-                      <h5>calendar</h5>
-                      <div class="card-header-right">
-                        <ul class="setting-option">
-                          <li>
-                            <div class="setting-badge"><i class="fa fa-spin fa-cog font-primary"></i></div>
-                          </li>
-                          <li><i class="view-html fa fa-code font-primary"></i></li>
-                          <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                          <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                          <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                          <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <div class="datepicker-here date-picker-university" data-language="en"></div>
-                      <div class="code-box-copy">
-                        <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#calender-sec"
-                          title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                        <pre><code class="language-html" id="calender-sec">&lt;div class="card project-calendar" data-intro="This is Date picker"&gt;
- &lt;div class="card-header"&gt;
-   &lt;h5&gt;calendar&lt;/h5&gt;
-   &lt;div class="card-header-right"&gt;
-     &lt;ul class="setting-option"&gt;
-       &lt;li&gt;&lt;div class="setting-badge"&gt;&lt;i class="fa fa-spin fa-cog font-primary"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="card-body"&gt;
-  &lt;div class="datepicker-here date-picker-university" data-language="en"&gt;&lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xl-12 col-md-6 des-xl-50 box-col-6">
-                  <div class="card employee-sec">
-                    <div class="card-body">
-                      <div class="table-responsive groups-table emp-details-table">
-                        <table class="table table-bordernone">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <div class="media">
-                                  <div class="round-light icon-secondary"><i class="fa fa-user"></i></div>
-                                  <div class="media-body"><span>All Employe Distribute Work</span>
-                                    <p>Company,SanFrancisco</p>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <p>9:00 to 10:00</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="media">
-                                  <div class="round-light icon-primary"><i class="fa fa-check-circle"></i></div>
-                                  <div class="media-body"><span>Business Plan is Approved</span>
-                                    <p>Elisse Joson,San Francisco</p>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <p>10:00 to 1:00</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="media">
-                                  <div class="round-light icon-success"><i class="fa fa-graduation-cap"></i></div>
-                                  <div class="media-body"><span>Our Education Project Presentation</span>
-                                    <p>Company,San Francisco</p>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <p>1:10 to 3:15</p>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div class="media">
-                                  <div class="round-light icon-warning"><i class="fa fa-coffee"></i></div>
-                                  <div class="media-body"><span>Coffe Break</span>
-                                    <p>Our Company All Team Member</p>
-                                  </div>
-                                </div>
-                              </td>
-                              <td>
-                                <p>3:15 to 3:30</p>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-8 des-xl-100 box-col-6">
-              <div class="card annual-earning-sec">
-                <div class="card-header justify-content-between">
-                  <h5>Annually Earnings</h5>
-                  <div class="center-content">
-                    <div class="center-content-left">
-                      <div class="round bg-primary d-inline-block"></div>
-                      <p>Archive</p>
-                    </div>
-                    <div class="center-content-right">
-                      <p>Expected</p>
-                    </div>
-                  </div>
-                  <div class="card-header-right">
-                    <ul class="setting-option">
-                      <li>
-                        <div class="setting-badge"><i class="fa fa-spin fa-cog font-primary"></i></div>
-                      </li>
-                      <li><i class="view-html fa fa-code font-primary"></i></li>
-                      <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                      <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                      <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                      <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-body py-0 p-0">
-                  <div id="earnings-chart"></div>
-                  <div class="code-box-copy">
-                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#annually-earnings"
-                      title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                    <pre><code class="language-html" id="annually-earnings">&lt;div class="card annual-earning-sec"&gt;
- &lt;div class="card-header justify-content-between"&gt;
-   &lt;h5&gt;Annually Earnings&lt;/h5&gt;
-   &lt;div class="center-content"&gt;
-     &lt;div class="center-content-left"&gt;
-       &lt;div class="round bg-primary d-inline-block"&gt;&lt;/div&gt;
-       &lt;p&gt;Archive&lt;/p&gt;
-     &lt;/div&gt;
-     &lt;div class="center-content-right"&gt;
-       &lt;p&gt;Expected&lt;/p&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class="card-header-right"&gt;
-     &lt;ul class="setting-option"&gt;
-       &lt;li&gt;&lt;div class="setting-badge"&gt;&lt;i class="fa fa-spin fa-cog font-primary"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-     &lt;/ul&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="card-body py-0 p-0"&gt;
-   &lt;div id="earnings-chart"&gt;&lt;/div&gt;
- &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 des-xl-100 box-col-6">
-              <div class="card visitor-sec">
-                <div class="card-header justify-content-between">
-                  <h5>Visitors Countries</h5>
-                  <div class="center-content">
-                    <p>Country</p><span>195</span>
-                  </div>
-                  <div class="card-header-right">
-                    <ul class="setting-option">
-                      <li>
-                        <div class="setting-badge"><i class="fa fa-spin fa-cog font-primary"></i></div>
-                      </li>
-                      <li><i class="view-html fa fa-code font-primary"></i></li>
-                      <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                      <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                      <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                      <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-body p-0">
-                  <div class="jvector-map-height" id="world-map2"></div>
-                  <div class="show-value-top d-flex">
-                    <div class="counry-data d-inline-block">
-                      <div class="round bg-primary d-inline-block"></div><span>South America</span>
-                    </div>
-                    <div class="counry-data d-inline-block">
-                      <div class="round bg-secondary d-inline-block"></div><span>Europe</span>
-                    </div>
-                    <div class="counry-data d-inline-block">
-                      <div class="round bg-warning d-inline-block"></div><span>London</span>
-                    </div>
-                    <div class="counry-data d-inline-block">
-                      <div class="round bg-success d-inline-block"></div><span>Australia</span>
-                    </div>
-                  </div>
-                  <div class="code-box-copy">
-                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#visitor-countris"
-                      title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                    <pre><code class="language-html" id="visitor-countris">&lt;div class="card visitor-sec"&gt;
-   &lt;div class="card-header justify-content-between"&gt;
-     &lt;h5&gt;Visitors Countries&lt;/h5&gt;
-     &lt;div class="center-content"&gt;
-       &lt;p&gt;Country&lt;/p&gt;&lt;span&gt;195&lt;/span&gt;
-     &lt;/div&gt;
-     &lt;div class="card-header-right"&gt;
-       &lt;ul class="setting-option"&gt;
-         &lt;li&gt;
-           &lt;div class="setting-badge"&gt;
-             &lt;i class="fa fa-spin fa-cog font-primary"&gt;&lt;/i&gt;
-           &lt;/div&gt;
-         &lt;/li&gt;
-         &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-         &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;/ul&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class="card-body p-0"&gt;
-     &lt;div class="jvector-map-height" id="world-map2"&gt;&lt;/div&gt;
-   &lt;div class="show-value-top d-flex"&gt;
-         &lt;div class="counry-data d-inline-block"&gt;
-           &lt;div class="round bg-primary d-inline-block"&gt;&lt;/div&gt;
-           &lt;span&gt;South America&lt;/span&gt;
-         &lt;/div&gt;
-         &lt;div class="counry-data d-inline-block"&gt;
-           &lt;div class="round bg-secondary d-inline-block"&gt;&lt;/div&gt;
-           &lt;span&gt;Europe&lt;/span&gt;
-         &lt;/div&gt;
-         &lt;div class="counry-data d-inline-block"&gt;
-           &lt;div class="round bg-warning d-inline-block"&gt;&lt;/div&gt;
-           &lt;span&gt;London&lt;/span&gt;
-         &lt;/div&gt;
-        &lt;div class="counry-data d-inline-block"&gt;
-           &lt;div class="round bg-success d-inline-block"&gt;&lt;/div&gt;
-           &lt;span&gt;Australia&lt;/span&gt;
-         &lt;/div&gt;
-     &lt;/div&gt;
-   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-12 box-col-12">
-              <div class="card manage-invoice-sec">
-                <div class="card-header pb-0">
-                  <h5>Manage Invoice</h5>
-                  <div class="card-header-right">
-                    <ul class="setting-option">
-                      <li>
-                        <div class="setting-badge"><i class="fa fa-spin fa-cog font-primary"></i></div>
-                      </li>
-                      <li><i class="view-html fa fa-code font-primary"></i></li>
-                      <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                      <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                      <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                      <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="card-body">
-                  <div class="manage-invoice-table">
-                    <div class="item">
-                      <div class="table-responsive manage-invoice">
-                        <table class="table table-bordernone">
-                          <thead>
-                            <tr>
-                              <th>Name </th>
-                              <th>Date</th>
-                              <th>Project</th>
-                              <th>Contact Number</th>
-                              <th>Country</th>
-                              <th>Amount</th>
-                              <th>Status</th>
-                              <th>
-                                <ul class="setting-option">
-                                  <li>
-                                    <div class="setting-badge"><i class="fa fa-spin fa-cog font-primary"></i></div>
-                                  </li>
-                                  <li><i class="view-html fa fa-code font-primary"></i></li>
-                                  <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                                  <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                                  <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                                  <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                                </ul>
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td> <span>01</span>
-                                <div class="t-title"><img class="img-40 rounded-circle align-top"
-                                    src="../assets/images/dashboard-3/1_1.png" alt="" data-original-title="" title="">
-                                  <div class="d-inline-block align-middle"><a href="user-profile.html"><span
-                                        class="f-w-500">Smith johson Lorn</span></a></div>
-                                </div>
-                              </td>
-                              <td>
-                                <p>16 August,2019 5:10am</p>
-                              </td>
-                              <td> <span>Business Logo Create</span></td>
-                              <td>
-                                <p>+1(555) 4585 6859</p>
-                              </td>
-                              <td>
-                                <p>United Kingdom</p>
-                              </td>
-                              <td>
-                                <p>$8435.00</p>
-                              </td>
-                              <td>
-                                <p>Past Due</p>
-                              </td>
-                              <td>
-                                <div class="progress-showcase">
-                                  <div class="progress sm-progress-bar">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 50%"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> <span>02</span>
-                                <div class="t-title"><img class="img-40 rounded-circle align-top"
-                                    src="../assets/images/dashboard-3/2_2.png" alt="" data-original-title="" title="">
-                                  <div class="d-inline-block align-middle"><a href="user-profile.html"><span
-                                        class="f-w-500">Brown Taylor Jeron</span></a></div>
-                                </div>
-                              </td>
-                              <td>
-                                <p>26 Mar,2019 2:10pm</p>
-                              </td>
-                              <td> <span>Apply Google Review</span></td>
-                              <td>
-                                <p>+880 8759 0013</p>
-                              </td>
-                              <td>
-                                <p>Bangladesh</p>
-                              </td>
-                              <td>
-                                <p>$4542.00</p>
-                              </td>
-                              <td>
-                                <p>Paid</p>
-                              </td>
-                              <td>
-                                <div class="progress-showcase">
-                                  <div class="progress sm-progress-bar">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 70%"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> <span>03</span>
-                                <div class="t-title"><img class="img-40 rounded-circle align-top"
-                                    src="../assets/images/dashboard-3/3_3.png" alt="" data-original-title="" title="">
-                                  <div class="d-inline-block align-middle"><a href="user-profile.html"><span
-                                        class="f-w-500">Admas Lopez Perry</span></a></div>
-                                </div>
-                              </td>
-                              <td>
-                                <p>06 Aug,2019 3:10am</p>
-                              </td>
-                              <td> <span>Recruitment Refrances</span></td>
-                              <td>
-                                <p>+613201 2546</p>
-                              </td>
-                              <td>
-                                <p>Australia</p>
-                              </td>
-                              <td>
-                                <p>$6140.00</p>
-                              </td>
-                              <td>
-                                <p>Past Due</p>
-                              </td>
-                              <td>
-                                <div class="progress-showcase">
-                                  <div class="progress sm-progress-bar">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td> <span>04</span>
-                                <div class="t-title"><img class="img-40 rounded-circle align-top"
-                                    src="../assets/images/dashboard-3/4_4.png" alt="" data-original-title="" title="">
-                                  <div class="d-inline-block align-middle"><a href="user-profile.html"><span
-                                        class="f-w-500">Barker Cartor Ward</span></a></div>
-                                </div>
-                              </td>
-                              <td>
-                                <p>22 Sept,2019 2:10pm</p>
-                              </td>
-                              <td> <span>Project Research</span></td>
-                              <td>
-                                <p>+1-684 8759 0013</p>
-                              </td>
-                              <td>
-                                <p>American Samoa</p>
-                              </td>
-                              <td>
-                                <p>$1526.00</p>
-                              </td>
-                              <td>
-                                <p>Paid</p>
-                              </td>
-                              <td>
-                                <div class="progress-showcase">
-                                  <div class="progress sm-progress-bar">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 80%"
-                                      aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                  </div>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="code-box-copy">
-                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#manage-invoice"
-                      title="Copy"><i class="icofont icofont-copy-alt"></i></button>
-                    <pre><code class="language-html" id="manage-invoice">&lt;div class="card manage-invoice-sec"&gt;
- &lt;div class="card-header pb-0"&gt;
-   &lt;h5&gt;Manage Invoice&lt;/h5&gt;
-   &lt;div class="card-header-right"&gt;
-     &lt;ul class="setting-option"&gt;
-       &lt;li&gt;
-         &lt;div class="setting-badge"&gt;&lt;i class="fa fa-spin fa-cog font-primary"&gt;&lt;/i&gt;&lt;/div&gt;
-       &lt;/li&gt;
-       &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-       &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-     &lt;/ul&gt;
-   &lt;/div&gt;
- &lt;/div&gt;
- &lt;div class="card-body"&gt;
-   &lt;div class="manage-invoice-table"&gt;
-     &lt;div class="item"&gt;
-       &lt;div class="table-responsive manage-invoice"&gt;
-         &lt;table class="table table-bordernone"&gt;
-          &lt;thead&gt;
-           &lt;tr&gt;
-             &lt;th&gt;Name &lt;/th&gt;
-             &lt;th&gt;Date&lt;/th&gt;
-             &lt;th&gt;Project&lt;/th&gt;
-             &lt;th&gt;Contact Number&lt;/th&gt;
-             &lt;th&gt;Country&lt;/th&gt;
-             &lt;th&gt;Amount&lt;/th&gt;
-             &lt;th&gt;Status&lt;/th&gt;
-             &lt;th&gt;
-               &lt;ul class="setting-option"&gt;
-                 &lt;li&gt;
-                   &lt;div class="setting-badge"&gt;&lt;i class="fa fa-spin fa-cog font-primary"&gt;&lt;/i&gt;&lt;/div&gt;
-                 &lt;/li&gt;
-                 &lt;li&gt;&lt;i class="view-html fa fa-code font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-                 &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-                 &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-                 &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-                 &lt;li&gt;&lt;i class="icofont icofont-error close-card font-primary"&gt;&lt;/i&gt;&lt;/li&gt;
-               &lt;/ul&gt;
-             &lt;/th&gt;
-           &lt;/tr&gt;
-             &lt;/thead&gt;
-               &lt;tbody&gt;
-                   &lt;tr&gt;
-                     &lt;td&gt; 
-                       &lt;span&gt;01&lt;/span&gt;
-                       &lt;div class="t-title"&gt;&lt;img class="img-40 rounded-circle align-top" src="../assets/images/dashboard-3/1_1.png" alt="" data-original-title="" title=""/&gt;
-                         &lt;div class="d-inline-block align-middle"&gt;&lt;a href="user-profile.html"&gt;&lt;span class="f-w-500"&gt;Smith johson Lorn&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-                       &lt;/div&gt;
-                     &lt;/td&gt;
-                     &lt;td&gt;&lt;p&gt;16 August,2019 5:10am&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;span&gt;Business Logo Create&lt;/span&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;+1(555) 4585 6859&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;United Kingdom&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt;&lt;p&gt;$8435.00&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt;&lt;p&gt;Past Due&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt;&lt;div class="progress-showcase"&gt;
-                       &lt;div class="progress sm-progress-bar"&gt;
-                         &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
-                         &lt;/div&gt;
-                       &lt;/div&gt;
-                     &lt;/td&gt;
-                   &lt;/tr&gt;
-                   &lt;tr&gt;
-                     &lt;td&gt; 
-                       &lt;span&gt;02&lt;/span&gt;
-                       &lt;div class="t-title"&gt;
-                         &lt;img class="img-40 rounded-circle align-top" src="../assets/images/dashboard-3/2_2.png" alt="" data-original-title="" title=""/&gt;
-                         &lt;div class="d-inline-block align-middle"&gt;
-                           &lt;a href="user-profile.html"&gt;&lt;span class="f-w-500"&gt;Brown Taylor Jeron&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-                       &lt;/div&gt;
-                     &lt;/td&gt;
-                     &lt;td&gt; 
-                       &lt;p&gt;26 Mar,2019 2:10pm&lt;/p&gt;
-                     &lt;/td&gt;
-                     &lt;td&gt; &lt;span&gt;Apply Google Review&lt;/span&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;+880 8759 0013&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;Bangladesh&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;$4542.00&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;Paid&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;div class="progress-showcase"&gt;
-                       &lt;div class="progress sm-progress-bar"&gt;
-                         &lt;div class="progress-bar bg-success" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
-                       &lt;/div&gt;
-                       &lt;/div&gt;
-                     &lt;/td&gt;
-                   &lt;/tr&gt;
-                   &lt;tr&gt;
-                     &lt;td&gt; 
-                         &lt;span&gt;03&lt;/span&gt;
-                         &lt;div class="t-title"&gt;
-                           &lt;img class="img-40 rounded-circle align-top" src="../assets/images/dashboard-3/3_3.png" alt="" data-original-title="" title=""/&gt;
-                         &lt;div class="d-inline-block align-middle"&gt;
-                           &lt;a href="user-profile.html"&gt;&lt;span class="f-w-500"&gt;Admas Lopez Perry&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-                         &lt;/div&gt;
-                     &lt;/td&gt;
-                     &lt;td&gt; 
-                       &lt;p&gt;06 Aug,2019 3:10am&lt;/p&gt;
-                     &lt;/td&gt;
-                     &lt;td&gt; &lt;span&gt;Recruitment Refrances&lt;/span&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;+613201 2546&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;Australia&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;$6140.00&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;Past Due&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt;
-                       &lt;div class="progress-showcase"&gt;
-                         &lt;div class="progress sm-progress-bar"&gt;
-                           &lt;div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
-                         &lt;/div&gt;
-                       &lt;/div&gt;
-                     &lt;/td&gt;
-                   &lt;/tr&gt;
-                   &lt;tr&gt;
-                     &lt;td&gt; &lt;span&gt;04&lt;/span&gt;
-                       &lt;div class="t-title"&gt;&lt;img class="img-40 rounded-circle align-top" src="../assets/images/dashboard-3/4_4.png" alt="" data-original-title="" title=""/&gt;
-                         &lt;div class="d-inline-block align-middle"&gt;&lt;a href="user-profile.html"&gt;&lt;span class="f-w-500"&gt;Barker Cartor Ward&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
-                       &lt;/div&gt;
-                     &lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;22 Sept,2019 2:10pm&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;span&gt;Project Research&lt;/span&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;+1-684 8759 0013&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;American Samoa&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;$1526.00&lt;/p&gt; &lt;/td&gt;
-                     &lt;td&gt; &lt;p&gt;Paid&lt;/p&gt;&lt;/td&gt;
-                     &lt;td&gt; 
-                       &lt;div class="progress-showcase"&gt;&lt;div class="progress sm-progress-bar"&gt;
-                           &lt;div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
-                         &lt;/div&gt;
-                       &lt;/div&gt;
-                     &lt;/td&gt;
-                   &lt;/tr&gt;
-                 &lt;/tbody&gt;
-               &lt;/table&gt;
-               &lt;/div&gt;
-             &lt;/div&gt;
-           &lt;/div&gt;
-           &lt;/div&gt;
-         &lt;/div&gt;</code></pre>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Container-fluid Ends-->
-      </div>
-      <!-- tap on top starts-->
-      <div class="tap-top"><i class="icon-control-eject"></i></div>
-      <!-- tap on tap ends-->
-      <!-- footer start-->
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-6 footer-copyright">
-              <p class="mb-0">Copyright 2022 © wingo All rights reserved.</p>
-            </div>
-            <div class="col-md-6">
-              <p class="pull-right mb-0">Hand crafted & made with <i class="fa fa-heart font-secondary"></i></p>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
   </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    const socket = io();
+
+    const name = prompt("Nhập tên : ");
+
+    const chatForm = document.querySelector('#chat-form');
+    const chatMes = document.querySelector('#chat-mes');
+
+    chatForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const message = chatMes.value
+      socket.emit('on-chat', {
+        name,
+        message: message
+      });
+      chatMes.value = ''
+    })
+
+    const messages = document.querySelector('#messages');
+    socket.on('user-chat', (message) => {
+      const chatItem = document.createElement("li");
+      chatItem.textContent = `${message.name}: ${message.message}`;
+      messages.appendChild(chatItem);
+    })
+  </script>
   <!-- latest jquery-->
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
   <!-- feather icon js-->
@@ -1653,96 +203,11 @@
   <!-- Bootstrap js-->
   <script src="../assets/js/bootstrap/popper.min.js"></script>
   <script src="../assets/js/bootstrap/bootstrap.min.js"></script>
-  <!-- Plugins JS start-->
-  <script src="../assets/js/chart/apex-chart/apex-chart.js"></script>
-  <script src="../assets/js/chart/apex-chart/stock-prices.js"></script>
-  <script src="../assets/js/prism/prism.min.js"></script>
-  <script src="../assets/js/clipboard/clipboard.min.js"></script>
-  <script src="../assets/js/custom-card/custom-card.js"></script>
-  <script src="../assets/js/vector-map/jquery-jvectormap-2.0.2.min.js"></script>
-  <script src="../assets/js/vector-map/map/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="../assets/js/vector-map/map/jquery-jvectormap-us-aea-en.js"></script>
-  <script src="../assets/js/vector-map/map/jquery-jvectormap-uk-mill-en.js"></script>
-  <script src="../assets/js/vector-map/map/jquery-jvectormap-au-mill.js"></script>
-  <script src="../assets/js/vector-map/map/jquery-jvectormap-chicago-mill-en.js"></script>
-  <script src="../assets/js/vector-map/map/jquery-jvectormap-in-mill.js"></script>
-  <script src="../assets/js/vector-map/map/jquery-jvectormap-asia-mill.js"></script>
-  <script src="../assets/js/datepicker/date-picker/datepicker.js"></script>
-  <script src="../assets/js/datepicker/date-picker/datepicker.en.js"></script>
-  <script src="../assets/js/datepicker/date-picker/datepicker.custom.js"></script>
-  <script src="../assets/js/vector-map/map-vector.js"></script>
   <script src="../assets/js/dashboard/dashboard_3.js"></script>
   <!-- Plugins JS Ends-->
-  <!-- Theme js-->
-  <script src="../assets/js/theme-customizer/customizer.js"></script>
   <script src="../assets/js/script.js"></script>
   <!-- login js-->
   <!-- Plugin used-->
 </body>
 
-<!-- Mirrored from admin.pixelstrap.com/wingo/theme/dashboard-03.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 05 Feb 2023 13:27:33 GMT -->
-
 </html>
-<!-- <!DOCTYPE html>
-<html>
-
-<head>
-  <title>
-    <%= title %>
-  </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-  <h1>
-    <%= title %>
-  </h1>
-  <style>
-    li {
-      background: #7070eb;
-      max-width: 200px;
-      padding: 5px;
-      color: white;
-      border-radius: 25px;
-      padding-left: 21px;
-      margin-top: 10px;
-    }
-  </style>
-  <h3>CHAT APP</h3>
-  <div style="height: 200px; width: 500px; overflow: auto; border: 1px solid;">
-    <ul id="messages"></ul>
-  </div><br>
-
-  <form id="chat-form">
-    <input type="text" id="chat-mes">
-    <button id="send-chat">Gửi</button>
-  </form>
-</body>
-<script src="/socket.io/socket.io.js"></script>
-<script>
-  const socket = io();
-
-  const name = prompt("Nhập tên : ");
-
-  const chatForm = document.querySelector('#chat-form');
-  const chatMes = document.querySelector('#chat-mes');
-
-  chatForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const message = chatMes.value
-    socket.emit('on-chat', {
-      name,
-      message: message
-    });
-    chatMes.value = ''
-  })
-
-  const messages = document.querySelector('#messages');
-  socket.on('user-chat', (message) => {
-    const chatItem = document.createElement("li");
-    chatItem.textContent = `${message.name}: ${message.message}`;
-    messages.appendChild(chatItem);
-  })
-</script>
-
-</html> -->
