@@ -35,7 +35,7 @@
                               </ul>
                             </div>
                             <div class="congrats-content">
-                              <h3>Congratulations mark jecno </h3>
+                              <h3>Chia sẻ cảm xúc cùng cộng đồng </h3>
                               <p>Lorem ipsum is simply dummy text of the printing and typesetting printing and
                                 typesetting industry.</p>
                             </div>
@@ -170,7 +170,7 @@
   <script>
     const socket = io();
 
-    const name = prompt("Nhập tên : ");
+    var Nickname = document.cookie;
 
     const chatForm = document.querySelector('#chat-form');
     const chatMes = document.querySelector('#chat-mes');
@@ -179,7 +179,7 @@
       e.preventDefault();
       const message = chatMes.value
       socket.emit('on-chat', {
-        name,
+        Nickname,
         message: message
       });
       chatMes.value = ''
@@ -188,7 +188,7 @@
     const messages = document.querySelector('#messages');
     socket.on('user-chat', (message) => {
       const chatItem = document.createElement("li");
-      chatItem.textContent = `${message.name}: ${message.message}`;
+      chatItem.textContent = `${message.Nickname}: ${message.message}`;
       messages.appendChild(chatItem);
     })
   </script>

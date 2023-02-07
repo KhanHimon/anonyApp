@@ -26,7 +26,7 @@
               <div class="form-group">
                 <label>Nickname</label>
                 <div class="input-group"><span class="input-group-text"><i class="icon-email"></i></span>
-                  <input class="form-control" type="text" required="" placeholder="Test@gmail.com">
+                  <input class="form-control" id="Nickname" name="Nickname" type="text" required="">
                 </div>
               </div>
               <!-- <div class="form-group">
@@ -44,7 +44,7 @@
                 </div><a class="link" href="forget-password.html">Forgot password?</a>
               </div> -->
               <div class="form-group">
-                <button class="btn btn-primary btn-block" type="submit">Tham gia</button>
+                <a href="/dashboard" class="btn btn-primary btn-block" onclick="myFunction()">Tham gia</a>
               </div>
             </form>
           </div>
@@ -53,6 +53,7 @@
     </div>
   </section>
   <!-- page-wrapper end-->
+  <script src="/socket.io/socket.io.js"></script>
   <script>
     (function () {
       'use strict';
@@ -71,6 +72,16 @@
         });
       }, false);
     })();
+
+    
+
+    function myFunction() {
+      var Nickname = document.getElementById('Nickname').value;
+      document.cookie = Nickname;
+      console.log(Nickname);
+    }
+
+
   </script>
   <!-- latest jquery-->
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
