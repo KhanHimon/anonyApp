@@ -23,139 +23,52 @@
                         <div class="card-body p-0">
                           <div class="congrats-sec">
                             <div class="card-header-right">
-                              <ul class="setting-option bg-transparent">
-                                <li>
-                                  <div class="setting-badge light-badge"><i class="fa fa-cog"></i></div>
-                                </li>
-                                <li><i class="view-html fa fa-code"></i></li>
-                                <li><i class="icofont icofont-maximize full-card"></i></li>
-                                <li><i class="icofont icofont-minus minimize-card"></i></li>
-                                <li><i class="icofont icofont-refresh reload-card"></i></li>
-                                <li><i class="icofont icofont-error close-card"></i></li>
-                              </ul>
                             </div>
                             <div class="congrats-content">
                               <h3>Chia sẻ cảm xúc cùng cộng đồng </h3>
-                              <p>Lorem ipsum is simply dummy text of the printing and typesetting printing and
-                                typesetting industry.</p>
+                              <p>Chia sẻ những câu chuyện bạn muốn kể mà không có ai để có thể chia sẻ với mọi người. Đảm bảo 100% ẩn danh.</p>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-6 box-col-12 box-col-6">
+                    <div class="col-md-12 box-col-12 box-col-12">
                       <div class="card today-task-sec">
                         <div class="card-header justify-content-between">
-                          <h5>Today Task</h5>
-                          <div class="center-content">
-                            <p>5 Task</p><span>Completed</span>
-                          </div>
-                          <div class="card-header-right">
-                            <ul class="setting-option">
-                              <li>
-                                <div class="setting-badge"><i class="fa fa-spin fa-cog font-primary"></i></div>
-                              </li>
-                              <li><i class="view-html fa fa-code font-primary"></i></li>
-                              <li><i class="icofont icofont-maximize full-card font-primary"></i></li>
-                              <li><i class="icofont icofont-minus minimize-card font-primary"></i></li>
-                              <li><i class="icofont icofont-refresh reload-card font-primary"></i></li>
-                              <li><i class="icofont icofont-error close-card font-primary"></i></li>
-                            </ul>
-                          </div>
+                          <h5 style="text-transform:none">Đăng bài viết mới</h5>
                         </div>
                         <div class="card-body p-t-0">
-                          <div class="table-responsive task-details">
-                            <table class="table table-bordernone">
-                              <tbody>
-                                <tr>
-                                  <td><span>Google Project Apply Review</span>
-                                    <p>Completed in 3 Hours</p>
-                                  </td>
-                                  <td class="progress-showcase">
-                                    <div class="progress sm-progress-bar">
-                                      <div class="progress-bar bg-primary" role="progressbar" style="width: 75%"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p>75% Percentage</p>
-                                  </td>
-                                  <td> <a class="btn light-primary" href="javascript:void(0)">Edit</a></td>
-                                </tr>
-                                <tr>
-                                  <td><span>Business Logo Create</span>
-                                    <p>Completed in 5 Hours</p>
-                                  </td>
-                                  <td class="progress-showcase">
-                                    <div class="progress sm-progress-bar">
-                                      <div class="progress-bar bg-secondary" role="progressbar" style="width: 100%"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p>Completed</p>
-                                  </td>
-                                  <td><a class="btn light-secondary" href="javascript:void(0)">Edit</a></td>
-                                </tr>
-                                <tr>
-                                  <td><span>Business Project Research</span>
-                                    <p>Completed in 2 Hours</p>
-                                  </td>
-                                  <td class="progress-showcase">
-                                    <div class="progress sm-progress-bar">
-                                      <div class="progress-bar bg-success" role="progressbar" style="width: 65%"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p>65% Percentage</p>
-                                  </td>
-                                  <td><a class="btn light-success" href="javascript:void(0)">Edit</a></td>
-                                </tr>
-                                <tr>
-                                  <td><span>Recruitment in IT Department</span>
-                                    <p>Completed in 4 Days</p>
-                                  </td>
-                                  <td class="progress-showcase">
-                                    <div class="progress sm-progress-bar">
-                                      <div class="progress-bar bg-warning" role="progressbar" style="width: 90%"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <p>90% Percentage</p>
-                                  </td>
-                                  <td><a class="btn light-warning" href="javascript:void(0)">Edit</a></td>
-                                </tr>
-                                <tr>
-                                  <td><span>Submit Riverfront Project</span>
-                                    <p>Completed in 2 Days</p>
-                                  </td>
-                                  <td>
-                                    <div class="progress-showcase">
-                                      <div class="progress sm-progress-bar">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 30%"
-                                          aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                      </div>
-                                      <p>30% Percentage</p>
-                                    </div>
-                                  </td>
-                                  <td><a class="btn light-info" href="javascript:void(0)">Edit</a></td>
-                                </tr>
-                              </tbody>
-                            </table>
+                          <div>
+                            <form action="/" method="POST" onsubmit="return false" id="post-form">
+                              <input class="form-control" id="post-content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px;">
+                              <button class="btn btn-primary btn-pill" style="float: right;" type="submit" id="send-post">Gửi</button>
+                            </form>
                           </div>
-                          <div class="text-center"><a class="f-w-700" href="javascript:void(0)">More...</a></div>
                         </div>
                       </div>
                     </div>
+                    <div id="new_post"></div>
                   </div>
                 </div>
                 <div class="col-xl-4 des-xl-100 congrats-sec-main box-col-12">
                   <div class="row">
                     <div class="col-md-12 box-col-12 box-col-12">
-                      <div class="card today-task-sec">
-                        <div class="card-body p-t-0" style="height: 600px;">
-                          <ul id="messages"></ul>
+                      <div class="card today-task-sec" style="margin-bottom: 10px; border-radius: 25px;">
+                        <div class="card-body p-t-0 input-air-primary" style="height: 600px; border-radius: 25px; overflow: auto">
+                          <ul style="margin-top: 20px;" id="messages"></ul>
                         </div>
-                        <div class="">
-                          <form id="chat-form">
-                            <input type="text" id="chat-mes">
-                            <button id="send-chat">Gửi</button>
-                          </form>
-                        </div>
+                      </div>
+                      <div class="col-md-12 box-col-12 box-col-12">
+                        <form id="chat-form">
+                          <div class="row">
+                            <div class="col-md-10">
+                              <input class="form-control btn-pill input-air-primary" type="text" id="chat-mes">
+                            </div>
+                            <div class="col-md-2">
+                              <button class="btn btn-primary btn-pill" style="float: right;" id="send-chat">Gửi</button>
+                            </div>
+                          </div>
+                        </form>
                       </div>
                     </div>
                   </div>
@@ -171,7 +84,6 @@
     const socket = io();
 
     var Nickname = document.cookie;
-
     const chatForm = document.querySelector('#chat-form');
     const chatMes = document.querySelector('#chat-mes');
 
@@ -188,9 +100,48 @@
     const messages = document.querySelector('#messages');
     socket.on('user-chat', (message) => {
       const chatItem = document.createElement("li");
+      chatItem.classList.add("my-message")
       chatItem.textContent = `${message.Nickname}: ${message.message}`;
       messages.appendChild(chatItem);
     })
+
+    // CREATE POST
+    const postForm = document.querySelector('#post-form')
+    const postContent = document.querySelector('#post-content');
+
+    postForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const newPost = postContent.value
+      socket.emit('on-post', {
+        Nickname,
+        newPost: newPost
+      });
+      postContent.value = ''
+    })
+
+    const new_post = document.querySelector('#new_post');
+    
+    socket.on('user-post', (post) => {
+      const postItem = document.createElement("div");
+      postItem.classList.add("my-post")
+      const POST = `
+        <div class="col-md-12 box-col-12 box-col-12">
+          <div class="card today-task-sec">
+            <div class="card-header justify-content-between">
+              <h5 style="text-transform:none">${post.Nickname}</h5>
+            </div>
+            <div class="card-body p-t-0">
+              <div>
+                ${post.newPost}
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+      postItem.textContent = document.querySelector('#new_post').innerHTML = POST;
+      // new_post.appendChild(postItem);
+    })
+
   </script>
   <!-- latest jquery-->
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
