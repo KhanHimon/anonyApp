@@ -18,7 +18,7 @@
               <div class="row size-column">
                 <div class="col-xl-8 des-xl-100 congrats-sec-main box-col-12">
                   <div class="row">
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                       <div class="card">
                         <div class="card-body p-0">
                           <div class="congrats-sec">
@@ -31,18 +31,41 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-12 box-col-12 box-col-12">
-                      <div class="card today-task-sec">
-                        <div class="card-header justify-content-between">
-                          <h5 style="text-transform:none">Đăng bài viết mới</h5>
-                        </div>
-                        <div class="card-body p-t-0">
-                          <div>
-                            <form action="/" method="POST" onsubmit="return false" id="post-form">
-                              <input class="form-control" id="post-content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px;">
-                              <button class="btn btn-primary btn-pill" style="float: right;" type="submit" id="send-post">Gửi</button>
-                            </form>
+                      <div class="card today-task-sec" style=" border-radius: 30px;">
+                        <div class="card-body p-t-0" style="padding: 10px;">
+                          <div class="row">
+                            <div class="col-1">
+
+                            </div>
+                            <div class="col-11">
+                              <button class="btn" style="padding: 10px; background-color: #ececec; width: 100%; margin-top: 10px; border-radius: 30px; color: #b2b0b0;" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal">Chia sẻ câu chuyện của bạn...</button>
+                            </div>
+                          </div>
+                          <hr/>
+                          <div class="row">
+                            <div class="col-4">
+                              
+                            </div>
+                            <div class="col-4"></div>
+                            <div class="col-4"></div>
+                          </div>
+                          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" style="padding-left: 35%;" id="exampleModalLabel">Đăng bài viết mới</h5>
+                                  <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                  <form action="/" method="POST" onsubmit="return false" id="post-form">
+                                    <input class="form-control" id="post-content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px;">
+                                    <button class="btn btn-primary" style="margin-top: 10px; width: 100%; padding-left: 45%;" type="submit"  aria-label="Close" id="send-post">Đăng bài</button>
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -61,11 +84,11 @@
                       <div class="col-md-12 box-col-12 box-col-12">
                         <form id="chat-form">
                           <div class="row">
-                            <div class="col-md-10">
-                              <input class="form-control btn-pill input-air-primary" type="text" id="chat-mes">
-                            </div>
-                            <div class="col-md-2">
-                              <button class="btn btn-primary btn-pill" style="float: right;" id="send-chat">Gửi</button>
+                            <div class="col-md-12 box-col-12 box-col-12">
+                              <div class="input-group pill-input-group">
+                                <input class="form-control btn-pill input-air-primary" type="text" id="chat-mes">
+                                <button class="input-group-text btn-pill input-air-primary" style="color: white; border: none; background-color: #4d8aff;">Gửi</button>
+                              </div>
                             </div>
                           </div>
                         </form>
