@@ -18,7 +18,7 @@
               <div class="row size-column">
                 <div class="col-xl-8 des-xl-100 congrats-sec-main box-col-12">
                   <div class="row">
-                    <!-- <div class="col-md-12">
+                    <div class="col-md-12">
                       <div class="card">
                         <div class="card-body p-0">
                           <div class="congrats-sec">
@@ -31,7 +31,7 @@
                           </div>
                         </div>
                       </div>
-                    </div> -->
+                    </div>
                     <div class="col-md-12 box-col-12 box-col-12">
                       <div class="card today-task-sec" style=" border-radius: 30px;">
                         <div class="card-body p-t-0" style="padding: 10px;">
@@ -59,9 +59,10 @@
                                   <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                  <form action="/" method="POST" onsubmit="return false" id="post-form">
-                                    <input class="form-control" id="post-content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px;">
-                                    <button class="btn btn-primary" style="margin-top: 10px; width: 100%; padding-left: 45%;" type="submit"  aria-label="Close" id="send-post">Đăng bài</button>
+                                  <form action="dashboard/bai-dang" method="POST" id="post-form">
+                                    <input type="hidden" id="nickname" name="nickname">
+                                    <input class="form-control" id="content" name="content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px;">
+                                    <button class="btn btn-primary" style="margin-top: 10px; width: 100%; padding-left: 45%;" type="submit" id="send-post">Đăng bài</button>
                                   </form>
                                 </div>
                               </div>
@@ -70,7 +71,20 @@
                         </div>
                       </div>
                     </div>
-                    <div id="new_post"></div>
+                    <ul id="new_post"></ul>
+                    <% list_posts.forEach(function(list_posts){ %>
+                      <div class="col-md-12 box-col-12 box-col-12">
+                        <div class="card today-task-sec">
+                          <div class="card-body p-t-0">
+                            <div>
+                              <br/>
+                             <b><h5 style="text-transform:none"><%= list_posts.nickname %></h5></b>
+                             <%= list_posts.content %>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    <% }); %>
                   </div>
                 </div>
                 <div class="col-xl-4 des-xl-100 congrats-sec-main box-col-12">
@@ -102,11 +116,15 @@
           </div>
       </div>
   </div>
+  <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
   <script src="/socket.io/socket.io.js"></script>
   <script>
     const socket = io();
 
     var Nickname = document.cookie;
+
+    document.querySelector("#nickname").value=`${Nickname}`;
+
     const chatForm = document.querySelector('#chat-form');
     const chatMes = document.querySelector('#chat-mes');
 
@@ -130,22 +148,32 @@
 
     // CREATE POST
     const postForm = document.querySelector('#post-form')
-    const postContent = document.querySelector('#post-content');
-
+    const postContent = document.querySelector('#content');
+    const button = document.querySelector("#send-post");
+    
     postForm.addEventListener('submit', (e) => {
+      
       e.preventDefault();
       const newPost = postContent.value
+      const new_posts = {
+        nickname : Nickname,
+        content : postContent.value
+      }
+      $.post('http://localhost:3000/dashboard/bai-dang', new_posts);
       socket.emit('on-post', {
         Nickname,
         newPost: newPost
       });
+      button.setAttribute("data-bs-dismiss", "modal");
+      $('#send-post').trigger('click');
+      button.removeAttribute("data-bs-dismiss", "modal");
       postContent.value = ''
     })
 
     const new_post = document.querySelector('#new_post');
     
     socket.on('user-post', (post) => {
-      const postItem = document.createElement("div");
+      const postItem = document.createElement("li");
       postItem.classList.add("my-post")
       const POST = `
         <div class="col-md-12 box-col-12 box-col-12">
@@ -161,8 +189,8 @@
         </div>
       `
       postItem.textContent = document.querySelector('#new_post').innerHTML = POST;
-      // new_post.appendChild(postItem);
-    })
+      
+    });
 
   </script>
   <!-- latest jquery-->
