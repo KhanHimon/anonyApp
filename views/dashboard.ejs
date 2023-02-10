@@ -71,15 +71,17 @@
                         </div>
                       </div>
                     </div>
-                    <ul id="new_post"></ul>
+                    <div id="new_post"></div>
                     <% list_posts.forEach(function(list_posts){ %>
                       <div class="col-md-12 box-col-12 box-col-12">
-                        <div class="card today-task-sec">
+                        <div class="card today-task-sec" style="border-radius: 15px">
                           <div class="card-body p-t-0">
                             <div>
                               <br/>
-                             <b><h5 style="text-transform:none"><%= list_posts.nickname %></h5></b>
-                             <%= list_posts.content %>
+                             <b>
+                              <p style="text-transform:none; font-weight: 700;">
+                              <%= list_posts.nickname %> :
+                            </p></b><%= list_posts.content %>
                             </div>
                           </div>
                         </div>
@@ -89,7 +91,7 @@
                 </div>
                 <div class="col-xl-4 des-xl-100 congrats-sec-main box-col-12">
                   <div class="row">
-                    <div class="col-md-12 box-col-12 box-col-12">
+                    <div class="col-md-12 box-col-12 box-col-12" style="position:fixed; overflow-y:scroll; overflow-x:hidden; width: 29%;">
                       <div class="card today-task-sec" style="margin-bottom: 10px; border-radius: 25px;">
                         <div class="card-body p-t-0 input-air-primary" style="height: 600px; border-radius: 25px; overflow: auto">
                           <ul style="margin-top: 20px;" id="messages"></ul>
@@ -120,14 +122,10 @@
   <script src="/socket.io/socket.io.js"></script>
   <script>
     const socket = io();
-
     var Nickname = document.cookie;
-
     document.querySelector("#nickname").value=`${Nickname}`;
-
     const chatForm = document.querySelector('#chat-form');
     const chatMes = document.querySelector('#chat-mes');
-
     chatForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const message = chatMes.value
@@ -137,7 +135,6 @@
       });
       chatMes.value = ''
     })
-
     const messages = document.querySelector('#messages');
     socket.on('user-chat', (message) => {
       const chatItem = document.createElement("li");
@@ -145,7 +142,6 @@
       chatItem.textContent = `${message.Nickname}: ${message.message}`;
       messages.appendChild(chatItem);
     })
-
     // CREATE POST
     const postForm = document.querySelector('#post-form')
     const postContent = document.querySelector('#content');
@@ -169,15 +165,14 @@
       button.removeAttribute("data-bs-dismiss", "modal");
       postContent.value = ''
     })
-
     const new_post = document.querySelector('#new_post');
     
     socket.on('user-post', (post) => {
-      const postItem = document.createElement("li");
+      const postItem = document.createElement("div");
       postItem.classList.add("my-post")
-      const POST = `
+      postItem.innerHTML = `
         <div class="col-md-12 box-col-12 box-col-12">
-          <div class="card today-task-sec">
+          <div class="card today-task-sec" style="border-radius: 15px">
             <div class="card-body p-t-0">
               <div>
                 <br/>
@@ -188,10 +183,9 @@
           </div>
         </div>
       `
-      postItem.textContent = document.querySelector('#new_post').innerHTML = POST;
+      new_post.insertBefore(postItem, new_post.childNodes[0]);
       
     });
-
   </script>
   <!-- latest jquery-->
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
