@@ -36,11 +36,11 @@
                       <div class="card today-task-sec" style=" border-radius: 30px;">
                         <div class="card-body p-t-0" style="padding: 10px;">
                           <div class="row">
-                            <div class="col-1">
-
+                            <div class="col-1" style="width: 5%; padding: 0px; margin-left: 2%; margin-top: 1%;">
+                              <img style="border-radius: 100%;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
                             </div>
                             <div class="col-11">
-                              <button class="btn" style="padding: 10px; background-color: #ececec; width: 100%; margin-top: 10px; border-radius: 30px; color: #b2b0b0;" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal">Chia sẻ câu chuyện của bạn...</button>
+                              <button class="btn" style="height: 50px; padding: 10px; background-color: #ececec; width: 100%; margin-top: 10px; border-radius: 30px; color: #b2b0b0;" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal">Chia sẻ câu chuyện của bạn...</button>
                             </div>
                           </div>
                           <hr/>
@@ -71,17 +71,16 @@
                         </div>
                       </div>
                     </div>
-                    <div id="new_post"></div>
+                    <ul id="new_post"></ul>
                     <% list_posts.forEach(function(list_posts){ %>
+                      <div id="new_post"></div>
                       <div class="col-md-12 box-col-12 box-col-12">
                         <div class="card today-task-sec" style="border-radius: 15px">
                           <div class="card-body p-t-0">
                             <div>
                               <br/>
-                             <b>
-                              <p style="text-transform:none; font-weight: 700;">
-                              <%= list_posts.nickname %> :
-                            </p></b><%= list_posts.content %>
+                             <b><h5 style="text-transform:none"><%= list_posts.nickname %></h5></b>
+                             <%= list_posts.content %>
                             </div>
                           </div>
                         </div>
@@ -91,7 +90,7 @@
                 </div>
                 <div class="col-xl-4 des-xl-100 congrats-sec-main box-col-12">
                   <div class="row">
-                    <div class="col-md-12 box-col-12 box-col-12" style="position:fixed; overflow-y:scroll; overflow-x:hidden; width: 29%;">
+                    <div class="col-md-12 box-col-12 box-col-12">
                       <div class="card today-task-sec" style="margin-bottom: 10px; border-radius: 25px;">
                         <div class="card-body p-t-0 input-air-primary" style="height: 600px; border-radius: 25px; overflow: auto">
                           <ul style="margin-top: 20px;" id="messages"></ul>
@@ -176,8 +175,17 @@
             <div class="card-body p-t-0">
               <div>
                 <br/>
-               <b><h5 style="text-transform:none">${post.Nickname}</h5></b>
-                ${post.newPost}
+                <div class="row">
+                  <div class="col-1" style="width: 5%; padding: 0px;">
+                    <img style="border-radius: 100%;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
+                  </div>
+                  <div class="col-11">
+                    <p style="text-transform:none; font-weight: 700; margin-bottom: 0px;"> ${post.Nickname}</p>
+                    <p style="font-weight: 300;"><%= moment(list_posts.create_date).startOf('millies').fromNow() %></p>
+                    </div>
+                  </div><br>
+                  ${post.newPost}
+                </div>
               </div>
             </div>
           </div>
