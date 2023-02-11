@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
+const momentJS = require('moment');
+require('moment/locale/vi');
 
 const POSTS_SCHEMA = require('../models/posts.model');
 
@@ -9,7 +11,7 @@ class POSTS_CONTROLLER {
     show_posts(req,res){
         POSTS_SCHEMA.find(function(err, list_posts){
             if(err) console(err);
-            res.render('dashboard',{list_posts})
+            res.render('dashboard',{list_posts, moment: momentJS});
         }).sort({create_date: -1});
     }
 

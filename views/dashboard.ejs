@@ -79,8 +79,17 @@
                           <div class="card-body p-t-0">
                             <div>
                               <br/>
-                             <b><h5 style="text-transform:none"><%= list_posts.nickname %></h5></b>
-                             <%= list_posts.content %>
+                              <div class="row">
+                                <div class="col-1" style="width: 5%; padding: 0px;">
+                                  <img style="border-radius: 100%;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
+                                </div>
+                                <div class="col-11">
+                                  <p style="text-transform:none; font-weight: 700; margin-bottom: 0px;"> <%= list_posts.nickname %></p>
+                                  <p style="font-weight: 300;"><%= moment(list_posts.create_date).startOf('millies').fromNow() %></p>
+                                  </div>
+                                </div><br>
+                                <%= list_posts.content %>
+                              </div>
                             </div>
                           </div>
                         </div>
