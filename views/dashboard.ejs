@@ -33,7 +33,7 @@
                       </div>
                     </div>
                     <div class="col-md-12 box-col-12 box-col-12">
-                      <div class="card today-task-sec" style=" border-radius: 30px;">
+                      <div class="card today-task-sec" style=" border-radius: 10px;">
                         <div class="card-body p-t-0" style="padding: 10px;">
                           <div class="row">
                             <div class="col-1" style="width: 5%; padding: 0px; margin-left: 2%; margin-top: 1%;">
@@ -46,11 +46,17 @@
                           <hr/>
                           <div class="row">
                             <div class="col-4">
-                              
+                              <button class="btn" id="up-image" style="height: 50px; width: 100%; border-radius: 10px; color: #000000;" type="button" data-bs-toggle="modal" data-original-title="test" data-bs-target="#exampleModal">
+                                <span style="padding-left: 25%; padding-top: 2px; color: #ffffff; font-size: 16px; font-weight: 600;">
+                                  <img style="padding-right: 5px; width: 40px; margin-bottom: 8px" src="https://img.icons8.com/external-vectorslab-flat-vectorslab/53/null/external-image-files-and-folders-vectorslab-flat-vectorslab.png"/>
+                                  Ảnh/video
+                                </span>
+                              </button>
                             </div>
                             <div class="col-4"></div>
                             <div class="col-4"></div>
                           </div>
+                          <!-- start modal Đăng bài viết -->
                           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                               <div class="modal-content">
@@ -62,12 +68,32 @@
                                   <form action="dashboard/bai-dang" method="POST" id="post-form">
                                     <input type="hidden" id="nickname" name="nickname">
                                     <input class="form-control" id="content" name="content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px;">
+                                    <br>
+                                    <div class="file-upload">
+                                      <div class="image-upload-wrap">
+                                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                        <div class="drag-text">
+                                          <h5><p style="color: #636363;"><img style="width: 50px;" src="https://img.icons8.com/carbon-copy/100/null/image-file.png"/></p>
+                                            Thêm ảnh/video
+                                            <p style="color: #636363;">Kéo hoặc thả</p></h5>
+                                        </div>
+                                      </div>
+                                      <div class="file-upload-content">
+                                        <div class="image-title-wrap">
+                                          <button type="button" onclick="removeUpload()" class="remove-image">
+                                            <img style="width: 35px;" src="https://img.icons8.com/color/48/null/cancel--v1.png"/>
+                                          </button>
+                                        </div>
+                                        <img class="file-upload-image" src="#" alt="your image" />
+                                      </div>
+                                    </div>
                                     <button class="btn btn-primary" style="margin-top: 10px; width: 100%; padding-left: 45%;" type="submit" id="send-post">Đăng bài</button>
                                   </form>
                                 </div>
                               </div>
                             </div>
                           </div>
+                          <!-- end modal Đăng bài viết -->
                         </div>
                       </div>
                     </div>
@@ -80,7 +106,7 @@
                             <br/>
                             <div class="row">
                               <div class="col-1" style="width: 5%; padding: 0px;">
-                                <img style="border-radius: 100%;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
+                                <img style="border-radius: 100%; margin-bottom: 5px;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
                               </div>
                               <div class="col-11">
                                 <p style="text-transform:none; font-weight: 700; margin-bottom: 0px;"> <%= list_posts.nickname %></p>
@@ -95,8 +121,12 @@
                   </div>
                 </div>
                 <div class="col-xl-4 des-xl-100 congrats-sec-main box-col-12">
+                  
                   <div class="row">
                     <div class="col-md-12 box-col-12 box-col-12" style="position:fixed; overflow-x:hidden; height: 80%; width: 29%;">
+                      <div class="card today-task-sec" style="height: 50px; margin-bottom: 5px; border-radius: 25px;">
+                        <p style="padding: 2.5%;">Số người đang online: <span id="count">0</span></p>
+                      </div>
                       <div class="card today-task-sec" style="margin-bottom: 10px; border-radius: 25px;">
                         <div class="card-body p-t-0 input-air-primary" style="height: 600px; border-radius: 25px; overflow: auto;">
                           <ul style="margin-top: 20px;" id="messages"></ul>
@@ -127,8 +157,14 @@
   <script src="/socket.io/socket.io.js"></script>
   <script>
     const socket = io();
+    // Hiển thị tổng số user đang online
+    socket.on('usercnt', function(msg){
+      document.getElementById("count").innerHTML=msg
+    });
+    // lấy nickname của user từ cookie
     var Nickname = document.cookie;
     document.querySelector("#nickname").value=`${Nickname}`;
+
     const chatForm = document.querySelector('#chat-form');
     const chatMes = document.querySelector('#chat-mes');
     chatForm.addEventListener('submit', (e) => {
@@ -140,11 +176,13 @@
       });
       chatMes.value = ''
     })
+    
     const messages = document.querySelector('#messages');
     socket.on('user-chat', (message) => {
       const chatItem = document.createElement("li");
       chatItem.classList.add("my-message")
-      chatItem.textContent = `${message.Nickname}: ${message.message}`;
+      chatItem.innerHTML = `<b>${message.Nickname}</b> : ${message.message} `
+      // chatItem.textContent = `${message.Nickname}: ${message.message}`;
       messages.appendChild(chatItem);
     })
     // CREATE POST
@@ -200,7 +238,42 @@
       new_post.insertBefore(postItem, new_post.childNodes[0]);
       
     });
+
+
+    function readURL(input) {
+      if (input.files && input.files[0]) {
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('.image-upload-wrap').hide();
+
+          $('.file-upload-image').attr('src', e.target.result);
+          $('.file-upload-content').show();
+
+          $('.image-title').html(input.files[0].name);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+      } else {
+        removeUpload();
+      }
+    }
+
+    function removeUpload() {
+      $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+      $('.file-upload-content').hide();
+      $('.image-upload-wrap').show();
+    }
+    $('.image-upload-wrap').bind('dragover', function () {
+        $('.image-upload-wrap').addClass('image-dropping');
+      });
+      $('.image-upload-wrap').bind('dragleave', function () {
+        $('.image-upload-wrap').removeClass('image-dropping');
+    });
   </script>
+  <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
   <!-- latest jquery-->
   <script src="../assets/js/jquery-3.5.1.min.js"></script>
   <!-- feather icon js-->
