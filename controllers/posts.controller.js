@@ -5,6 +5,8 @@ var io = require('socket.io')(http);
 const momentJS = require('moment');
 require('moment/locale/vi');
 
+const cloudinary = require('../controllers/cloudinary');
+
 const POSTS_SCHEMA = require('../models/posts.model');
 
 class POSTS_CONTROLLER {
