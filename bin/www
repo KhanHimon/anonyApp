@@ -39,10 +39,10 @@ io.on('connection', function(socket) {
       console.log(data);
       io.emit('user-chat', data)
   });
-  socket.on('on-post', new_post =>{
-    console.log(new_post)
-    io.emit('user-post', new_post)
-  });
+  // socket.on('on-post', new_post =>{
+  //   console.log(new_post)
+  //   io.emit('user-post', new_post)
+  // });
 });
 /**
  * Listen on provided port, on all network interfaces.

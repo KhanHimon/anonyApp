@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const POSTS_SCHEMA = new Schema({
     nickname: {type: String},
     img_posts: {type: String},
-    content: {type: String},
+    content: {type: String, default: ''},
     create_date: { type: Date }
 });
 

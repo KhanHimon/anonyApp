@@ -65,13 +65,13 @@
                                   <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                  <form action="dashboard/bai-dang" method="POST" id="post-form">
+                                  <form action="dashboard/bai-dang" method="post" id="post-form" enctype="multipart/form-data">
                                     <input type="hidden" id="nickname" name="nickname">
-                                    <input class="form-control" id="content" name="content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px;">
+                                    <input class="form-control" class="form-control" id="content" name="content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px;">
                                     <br>
                                     <div class="file-upload">
                                       <div class="image-upload-wrap">
-                                        <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                        <input class="file-upload-input form-control" id="img_posts" name="img_posts"  type='file' onchange="readURL(this);" />
                                         <div class="drag-text">
                                           <h5><p style="color: #636363;"><img style="width: 50px;" src="https://img.icons8.com/carbon-copy/100/null/image-file.png"/></p>
                                             Thêm ảnh/video
@@ -112,7 +112,8 @@
                                 <p style="text-transform:none; font-weight: 700; margin-bottom: 0px;"> <%= list_posts.nickname %></p>
                                 <p style="font-weight: 300;"><%= moment(list_posts.create_date).startOf('millies').fromNow() %></p>
                               </div><br>
-                              <%= list_posts.content %>
+                              <p><%= list_posts.content %></p>
+                              <img style="width: 100%;" src="./images/<%= list_posts.img_posts %>" alt="">
                             </div>
                           </div>
                         </div>
@@ -129,15 +130,21 @@
                       </div>
                       <div class="card today-task-sec" style="margin-bottom: 10px; border-radius: 25px;">
                         <div class="card-body p-t-0 input-air-primary" style="height: 600px; border-radius: 25px; overflow: auto;">
-                          <ul style="margin-top: 20px;" id="messages"></ul>
+                          <ul style="margin-top: 20px;">
+                            <% list_message.forEach(function(list_message){ %>
+                              <li class="my-message"><%= list_message.nickname %>: <%= list_message.message %></li>
+                            <% }); %>
+                          </ul>
+                          <ul id="messages"></ul>
                         </div>
                       </div>
                       <div class="col-md-12 box-col-12 box-col-12">
-                        <form id="chat-form">
+                        <form action="dashboard/message" method="post" id="chat-form">
                           <div class="row">
                             <div class="col-md-12 box-col-12 box-col-12">
                               <div class="input-group pill-input-group">
-                                <input class="form-control btn-pill input-air-primary" type="text" id="chat-mes">
+                                <input type="hidden" id="nickname" name="nickname">
+                                <input class="form-control btn-pill input-air-primary" id="message" name="message"  type="text">
                                 <button class="input-group-text btn-pill input-air-primary" style="color: white; border: none; background-color: #4d8aff;">Gửi</button>
                               </div>
                             </div>
@@ -166,10 +173,15 @@
     document.querySelector("#nickname").value=`${Nickname}`;
 
     const chatForm = document.querySelector('#chat-form');
-    const chatMes = document.querySelector('#chat-mes');
+    const chatMes = document.querySelector('#message');
     chatForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const message = chatMes.value
+      const new_message = {
+        nickname: Nickname,
+        message: message
+      }
+      $.post('http://localhost:3000/dashboard/message', new_message);
       socket.emit('on-chat', {
         Nickname,
         message: message
@@ -186,58 +198,61 @@
       messages.appendChild(chatItem);
     })
     // CREATE POST
-    const postForm = document.querySelector('#post-form')
-    const postContent = document.querySelector('#content');
-    const button = document.querySelector("#send-post");
+    // const postForm = document.querySelector('#post-form')
+    // const postContent = document.querySelector('#content');
+    // const postImg = document.getElementById('img_posts').files[0]
+    // const button = document.querySelector("#send-post");
     
-    postForm.addEventListener('submit', (e) => {
+    // postForm.addEventListener('submit', (e) => {
       
-      e.preventDefault();
-      const newPost = postContent.value
-      const new_posts = {
-        nickname : Nickname,
-        content : postContent.value
-      }
-      $.post('http://localhost:3000/dashboard/bai-dang', new_posts);
-      socket.emit('on-post', {
-        Nickname,
-        newPost: newPost
-      });
-      button.setAttribute("data-bs-dismiss", "modal");
-      $('#send-post').trigger('click');
-      button.removeAttribute("data-bs-dismiss", "modal");
-      postContent.value = ''
-    })
-    const new_post = document.querySelector('#new_post');
+    //   e.preventDefault();
+    //   const newPost = postContent.value
+    //   const new_posts = {
+    //     nickname : Nickname,
+    //     content : postContent.value,
+    //     img_posts: postImg
+    //   }
+    //   $.post('http://localhost:3000/dashboard/bai-dang');
+    //   socket.emit('on-post', {
+    //     Nickname,
+    //     newPost: newPost
+    //   });
+    //   button.setAttribute("data-bs-dismiss", "modal");
+    //   $('#send-post').trigger('click');
+    //   button.removeAttribute("data-bs-dismiss", "modal");
+    //   postContent.value = ''
+    // })
+    // const new_post = document.querySelector('#new_post');
     
-    socket.on('user-post', (post) => {
-      const postItem = document.createElement("div");
-      postItem.classList.add("my-post")
-      postItem.innerHTML = `
-        <div class="col-md-12 box-col-12 box-col-12">
-          <div class="card today-task-sec" style="border-radius: 15px">
-            <div class="card-body p-t-0">
-              <div>
-                <br/>
-                <div class="row">
-                  <div class="col-1" style="width: 5%; padding: 0px;">
-                    <img style="border-radius: 100%;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
-                  </div>
-                  <div class="col-11">
-                    <p style="text-transform:none; font-weight: 700; margin-bottom: 0px;"> ${post.Nickname}</p>
-                    <p style="font-weight: 300;"><%= moment(list_posts.create_date).startOf('millies').fromNow() %></p>
-                    </div>
-                  </div><br>
-                  ${post.newPost}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `
-      new_post.insertBefore(postItem, new_post.childNodes[0]);
+    // socket.on('user-post', (post) => {
+    //   const postItem = document.createElement("div");
+    //   postItem.classList.add("my-post")
+    //   postItem.innerHTML = `
+    //     <div class="col-md-12 box-col-12 box-col-12">
+    //       <div class="card today-task-sec" style="border-radius: 15px">
+    //         <div class="card-body p-t-0">
+    //           <div>
+    //             <br/>
+    //             <div class="row">
+    //               <div class="col-1" style="width: 5%; padding: 0px;">
+    //                 <img style="border-radius: 100%;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
+    //               </div>
+    //               <div class="col-11">
+    //                 <p style="text-transform:none; font-weight: 700; margin-bottom: 0px;"> ${post.Nickname}</p>
+    //                 <p style="font-weight: 300;"><%= moment(list_posts.create_date).startOf('millies').fromNow() %></p>
+    //                 </div>
+    //               </div><br>
+    //               <p>${post.newPost}</p>
+    //               <img style="width: 100%;" src="./images/<%= list_posts.img_posts %>" alt="">
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   `
+    //   new_post.insertBefore(postItem, new_post.childNodes[0]);
       
-    });
+    // });
 
 
     function readURL(input) {
