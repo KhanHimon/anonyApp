@@ -67,7 +67,7 @@
                                 <div class="modal-body">
                                   <form action="dashboard/bai-dang" method="post" id="post-form" enctype="multipart/form-data">
                                     <input type="hidden" id="nickname" name="nickname">
-                                    <input class="form-control" class="form-control" id="content" name="content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px;">
+                                    <textarea class="form-control" class="form-control" id="content" name="content" placeholder="Chia sẻ câu chuyện của bạn....." style="height: 76px; width: 460px; border: none; resize: none;"></textarea>
                                     <br>
                                     <div class="file-upload">
                                       <div class="image-upload-wrap">
@@ -112,8 +112,8 @@
                                 <p style="text-transform:none; font-weight: 700; margin-bottom: 0px;"> <%= list_posts.nickname %></p>
                                 <p style="font-weight: 300;"><%= moment(list_posts.create_date).startOf('millies').fromNow() %></p>
                               </div><br>
-                              <p><%= list_posts.content %></p>
-                              <img style="width: 100%;" src="./images/<%= list_posts.img_posts %>" alt="">
+                              <p style="padding-left: 0;"><%= list_posts.content %></p>
+                              <img style="width: 100%; padding: 0;" src="./images/<%= list_posts.img_posts %>" alt="">
                             </div>
                           </div>
                         </div>
