@@ -115,6 +115,29 @@
                               <p style="padding-left: 0;"><%= list_posts.content %></p>
                               <img style="width: 100%; padding: 0;" src="./images/<%= list_posts.img_posts %>" alt="">
                             </div>
+                            <hr/>
+                            <div>
+                              <button  data-bs-toggle="modal" data-bs-target="#detail_post_<%= list_posts._id %>">Bình luận</button>
+                              <div class="modal fade" id="detail_post_<%= list_posts._id %>" tabindex="-1" role="dialog" aria-labelledby="detail_post" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-body">
+                                      <div class="row" style="padding: 20px;">
+                                        <div class="col-1" style="width: 8%; padding: 0px;">
+                                          <img style="border-radius: 100%; margin-bottom: 5px;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
+                                        </div>
+                                        <div class="col-11">
+                                          <p style="text-transform:none; font-weight: 700; margin-bottom: 0px;"> <%= list_posts.nickname %></p>
+                                          <p style="font-weight: 300;"><%= moment(list_posts.create_date).startOf('millies').fromNow() %></p>
+                                        </div><br>
+                                        <p style="padding-left: 0;"><%= list_posts.content %></p>
+                                        <img style="width: 100%; padding: 0;" src="./images/<%= list_posts.img_posts %>" alt="">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
