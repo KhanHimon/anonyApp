@@ -131,8 +131,12 @@
                                           <p style="font-weight: 300;"><%= moment(list_posts.create_date).startOf('millies').fromNow() %></p>
                                         </div><br>
                                         <p style="padding-left: 0;"><%= list_posts.content %></p>
-                                        <img style="width: 100%; padding: 0;" src="./images/<%= list_posts.img_posts %>" alt="">
+                                        <img style="width: 100%; padding: 0; margin-bottom: 5%;" src="./images/<%= list_posts.img_posts %>" alt="">
                                       </div>
+                                    </div>
+                                    <div class="modal-footer" style="box-shadow: 0px 0px 5px #888">
+                                      <textarea class="form-control" class="form-control" id="content" name="content" placeholder="Viết bình luận..." style="height: 50px; border: none; resize: none; background-color: #eee;  border-radius: 25px; padding-top: 15px;"></textarea>
+                                      <button style="width: 100%; border-radius: 25px; padding-left: 45%;" class="btn btn-primary btn-pill" type="submit">Đăng</button>
                                     </div>
                                   </div>
                                 </div>
@@ -167,7 +171,7 @@
                             <div class="col-md-12 box-col-12 box-col-12">
                               <div class="input-group pill-input-group">
                                 <input type="hidden" id="nickname" name="nickname">
-                                <input class="form-control btn-pill input-air-primary" id="message" name="message"  type="text">
+                                <input class="form-control btn-pill input-air-primary" style="border-radius: 25px 0 0 25px" id="message" name="message"  type="text">
                                 <button class="input-group-text btn-pill input-air-primary" style="color: white; border: none; background-color: #4d8aff;">Gửi</button>
                               </div>
                             </div>
