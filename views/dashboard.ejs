@@ -133,10 +133,32 @@
                                         <p style="padding-left: 0;"><%= list_posts.content %></p>
                                         <img style="width: 100%; padding: 0; margin-bottom: 5%;" src="./images/<%= list_posts.img_posts %>" alt="">
                                       </div>
+                                      <hr>
+                                      <% list_comment.forEach(function(list_comment){ %>
+                                        <% if (list_posts._id == list_comment.id_posts.id) { %>
+                                        <div class="comment">
+                                          <div class="row">
+                                            <div class="col-2" style="width: 12%; padding: 0px; padding-left: 20px;">
+                                              <img style="border-radius: 100%; margin-bottom: 5px;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
+                                            </div>
+                                            <div class="col-10">
+                                              <div style="background-color: #eee; color: #3d3d3d; padding: 10px; border-radius: 15px; display: table;">
+                                                <b><%= list_comment.nickname %></b>
+                                                <p><%= list_comment.comment %></p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <% } %>
+                                      <% }); %>
                                     </div>
                                     <div class="modal-footer" style="box-shadow: 0px 0px 5px #888">
-                                      <textarea class="form-control" class="form-control" id="content" name="content" placeholder="Viết bình luận..." style="height: 50px; border: none; resize: none; background-color: #eee;  border-radius: 25px; padding-top: 15px;"></textarea>
-                                      <button style="width: 100%; border-radius: 25px; padding-left: 45%;" class="btn btn-primary btn-pill" type="submit">Đăng</button>
+                                      <form action="dashboard/comment" method="post">
+                                        <input type="hidden"  id="nickname" name="nickname" value="<%= list_posts.nickname %>">
+                                        <input type="hidden"  id="id_posts" name="id_posts" value="<%= list_posts._id %>">
+                                        <textarea class="form-control" class="form-control" id="comment" name="comment" placeholder="Viết bình luận..." style="height: 50px; border: none; resize: none; background-color: #eee;  border-radius: 25px; padding-top: 15px;"></textarea>
+                                        <button style="width: 100%; border-radius: 25px; padding-left: 45%;" class="btn btn-primary btn-pill" type="submit">Đăng</button>
+                                      </form>
                                     </div>
                                   </div>
                                 </div>
@@ -224,6 +246,8 @@
       // chatItem.textContent = `${message.Nickname}: ${message.message}`;
       messages.appendChild(chatItem);
     })
+
+
     // CREATE POST
     // const postForm = document.querySelector('#post-form')
     // const postContent = document.querySelector('#content');

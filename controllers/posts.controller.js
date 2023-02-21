@@ -2,6 +2,7 @@ var express = require('express');
 require('moment/locale/vi');
 
 const POSTS_SCHEMA = require('../models/posts.model');
+const COMMENT_SCHEMA = require('../models/comment.model');
 
 class POSTS_CONTROLLER {
     new_posts(req,res,next){
@@ -26,6 +27,17 @@ class POSTS_CONTROLLER {
         }
         
         
+        res.redirect(req.get('referer'));
+    }
+
+    new_comment(req,res){
+        const new_comment = new COMMENT_SCHEMA({
+            id_posts: req.body.id_posts,
+            nickname: req.body.nickname,
+            comment: req.body.comment,
+            create_date: Date.now()
+        });
+        new_comment.save();
         res.redirect(req.get('referer'));
     }
 }

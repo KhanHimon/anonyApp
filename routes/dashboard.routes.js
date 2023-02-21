@@ -19,6 +19,7 @@ var storage = multer.diskStorage({
 /* GET home page. */
 router.get('/',  DASHBOARD_CONTROLLER.show_dashboard);
 router.post('/message', MESSAGE_CONTROLLER.new_message);
+router.post('/comment', POSTS_CONTROLLER.new_comment);
 router.post('/bai-dang', upload.single('img_posts'), POSTS_CONTROLLER.new_posts);
 
 
