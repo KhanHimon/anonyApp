@@ -1,8 +1,9 @@
 var express = require('express');
 require('moment/locale/vi');
-
+const momentJS = require('moment');
 const POSTS_SCHEMA = require('../models/posts.model');
 const COMMENT_SCHEMA = require('../models/comment.model');
+const MESSAGE_SCHEMA = require('../models/message.model');
 
 class POSTS_CONTROLLER {
     new_posts(req,res,next){
@@ -37,8 +38,17 @@ class POSTS_CONTROLLER {
             comment: req.body.comment,
             create_date: Date.now()
         });
+        console.log(new_comment.id_posts._id);
         new_comment.save();
-        res.redirect(req.get('referer'));
+        res.redirect(`/dashboard/bai-dang=${new_comment.id_posts._id}`);
+        // POSTS_SCHEMA.findById(req.params._id, function(err,detail_posts){
+        //     MESSAGE_SCHEMA.find(function (err, list_message) {
+        //         COMMENT_SCHEMA.find(function (err, list_comment){
+        //             if(err) console(err);
+        //             res.render('pages/post_detail',{detail_posts,list_message,list_comment, moment: momentJS});
+        //         }).populate('id_posts').sort({create_date: -1});
+        //     })
+        // })
     }
 }
 

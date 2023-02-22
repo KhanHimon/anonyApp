@@ -3,6 +3,7 @@ var router = express.Router();
 const POSTS_CONTROLLER = require('../controllers/posts.controller');
 const MESSAGE_CONTROLLER = require('../controllers/message.controller');
 const DASHBOARD_CONTROLLER = require('../controllers/dashboard.controller');
+
 const multer = require('multer');
 
 var storage = multer.diskStorage({
@@ -18,8 +19,9 @@ var storage = multer.diskStorage({
 
 /* GET home page. */
 router.get('/',  DASHBOARD_CONTROLLER.show_dashboard);
+router.get('/bai-dang=:_id', DASHBOARD_CONTROLLER.show_detail_posts);
 router.post('/message', MESSAGE_CONTROLLER.new_message);
-router.post('/comment', POSTS_CONTROLLER.new_comment);
+router.post('/bai-dang=:_id', POSTS_CONTROLLER.new_comment);
 router.post('/bai-dang', upload.single('img_posts'), POSTS_CONTROLLER.new_posts);
 
 

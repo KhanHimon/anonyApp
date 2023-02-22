@@ -123,10 +123,10 @@
                                   <div class="modal-content">
                                     <div class="modal-body">
                                       <div class="row" style="padding: 20px;">
-                                        <div class="col-1" style="width: 8%; padding: 0px;">
+                                        <div class="col-2" style="width: 12%; padding: 0px;">
                                           <img style="border-radius: 100%; margin-bottom: 5px;" width="100%" src="https://scontent.fhan19-1.fna.fbcdn.net/v/t1.30497-1/143086968_2856368904622192_1959732218791162458_n.png?_nc_cat=1&ccb=1-7&_nc_sid=7206a8&_nc_ohc=HSy5184tsPEAX8o0zRJ&_nc_ht=scontent.fhan19-1.fna&oh=00_AfBW5PBC8UHSzvpa-2m223fwgEnDWe5psXoqM7UCceAcVA&oe=640E5878" alt="">
                                         </div>
-                                        <div class="col-11">
+                                        <div class="col-10">
                                           <p style="text-transform:none; font-weight: 700; margin-bottom: 0px;"> <%= list_posts.nickname %></p>
                                           <p style="font-weight: 300;"><%= moment(list_posts.create_date).startOf('millies').fromNow() %></p>
                                         </div><br>
@@ -153,10 +153,11 @@
                                       <% }); %>
                                     </div>
                                     <div class="modal-footer" style="box-shadow: 0px 0px 5px #888">
-                                      <form action="dashboard/comment" method="post">
+                                      <form action="/dashboard/bai-dang=<%= list_posts._id %>" method="post" style="width: 100%;">
                                         <input type="hidden"  id="nickname" name="nickname" value="<%= list_posts.nickname %>">
                                         <input type="hidden"  id="id_posts" name="id_posts" value="<%= list_posts._id %>">
                                         <textarea class="form-control" class="form-control" id="comment" name="comment" placeholder="Viết bình luận..." style="height: 50px; border: none; resize: none; background-color: #eee;  border-radius: 25px; padding-top: 15px;"></textarea>
+                                        <br>
                                         <button style="width: 100%; border-radius: 25px; padding-left: 45%;" class="btn btn-primary btn-pill" type="submit">Đăng</button>
                                       </form>
                                     </div>
